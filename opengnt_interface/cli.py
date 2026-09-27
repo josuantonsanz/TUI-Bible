@@ -12,7 +12,9 @@ if hasattr(sys.stderr, "reconfigure"):
     sys.stderr.reconfigure(encoding="utf-8", errors="replace")
 
 import json
+import os
 import shutil
+import subprocess
 import tempfile
 from datetime import datetime, timezone
 from hashlib import sha256
@@ -67,6 +69,71 @@ def _default_input_dir() -> Path:
     return candidates[0]
 
 
+def _shortcut_script() -> Path | None:
+    """Locate the Desktop-shortcut helper relative to the checkout, if present."""
+    candidates = [
+        Path(__file__).resolve().parent.parent / "scripts" / "create_desktop_shortcut.ps1",
+        Path.cwd() / "scripts" / "create_desktop_shortcut.ps1",
+    ]
+    for candidate in candidates:
+        if candidate.is_file():
+            return candidate
+    return None
+
+
+def _install_desktop_shortcut() -> None:
+    """Best-effort Desktop shortcut for a Windows full install.
+
+    The bundled ``startup/`` inputs are read from the checkout, so the
+    shortcut points at the checkout this command runs from.  Anything that
+    goes wrong (no PowerShell, no script, an installed wheel without the
+    ``scripts/`` directory) is reported but never fails the install.  Set
+    ``OPENGNT_NO_DESKTOP_SHORTCUT`` to opt out.
+    """
+    if sys.platform != "win32":
+        return
+    if os.environ.get("OPENGNT_NO_DESKTOP_SHORTCUT"):
+        console.print("[yellow]Desktop shortcut skipped (OPENGNT_NO_DESKTOP_SHORTCUT is set).[/yellow]")
+        return
+
+    script = _shortcut_script()
+    if script is None:
+        console.print(
+            "[yellow]Desktop shortcut skipped: scripts/create_desktop_shortcut.ps1 "
+            "was not found next to this installation.[/yellow]"
+        )
+        return
+
+    repo_root = script.parent.parent
+    try:
+        completed = subprocess.run(
+            [
+                "powershell",
+                "-NoProfile",
+                "-ExecutionPolicy", "Bypass",
+                "-File", str(script),
+                "-RepoPath", str(repo_root),
+            ],
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+    except OSError as error:
+        console.print(f"[yellow]Desktop shortcut not created: {error}[/yellow]")
+        return
+
+    if completed.returncode != 0:
+        detail = (completed.stderr or completed.stdout or "").strip()
+        console.print(f"[yellow]Desktop shortcut not created:[/yellow] {detail}")
+        return
+
+    desktop = next(
+        (line.strip() for line in (completed.stdout or "").splitlines() if line.strip()),
+        "Desktop shortcut created: TUI Bible",
+    )
+    console.print(f"[green]{desktop}[/green]")
+
+
 @app.command()
 def setup(
     input_dir: Path = typer.Option(None, help="Directory containing startup inputs (defaults to the bundled startup/ directory)"),
@@ -86,8 +153,9 @@ def setup(
     Biblia de Jerusalen translation built from startup/bibliaEsp.pk) in one
     step.  It never downloads anything.  --full-install additionally installs
     the NA28 readings embedded in the OpenGNT variant field and makes them the
-    primary text; --include-na28 does the same on its own.  A provenance
-    manifest is written next to the database.
+    primary text; --include-na28 does the same on its own.  On Windows a
+    --full-install also creates a Desktop shortcut that launches the TUI.  A
+    provenance manifest is written next to the database.
     """
     input_dir = (input_dir or _default_input_dir()).expanduser()
 
@@ -178,6 +246,10 @@ def setup(
     console.print(f"[bold green]Setup complete.[/bold green] Database: {output}")
     console.print(f"Provenance manifest: {manifest_path}")
     console.print(f"Words: {stats.words_imported}; NA28 variants installed: {stats.variants_created}")
+
+    if full_install:
+        _install_desktop_shortcut()
+
 
 @app.command()
 def import_data(

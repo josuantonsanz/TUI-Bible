@@ -39,8 +39,9 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 The first `uv run` creates the environment and resolves dependencies on its own,
 so a separate `uv sync` is optional.
 
-On Windows you can also add a Desktop shortcut that performs this bootstrap on
-first launch; see [Desktop shortcut](#desktop-shortcut).
+On Windows, `setup --full-install` also creates a Desktop shortcut that
+performs this bootstrap on first launch; see
+[Desktop shortcut](#desktop-shortcut).
 
 `setup --full-install` is the one-command build. It imports the bundled
 [OpenGNT](https://github.com/eliranwong/OpenGNT) reading plus the bundled lemma
@@ -85,18 +86,22 @@ text as OpenGNT.
 
 ## Desktop shortcut
 
-Windows users can launch the app from a Desktop icon. The shortcut runs
-[`scripts/launch_tui.cmd`](scripts/launch_tui.cmd), which installs dependencies
-and builds the database the first time and then opens the TUI. Create it from a
-clone with:
+On Windows, `opengnt setup --full-install` creates a Desktop shortcut for you.
+The shortcut runs [`scripts/launch_tui.cmd`](scripts/launch_tui.cmd), which
+installs dependencies and builds the database the first time and then opens the
+TUI. Set `OPENGNT_NO_DESKTOP_SHORTCUT=1` to skip it.
+
+To create it on its own, point it at a different checkout, or rename it:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File scripts\create_desktop_shortcut.ps1
+powershell -ExecutionPolicy Bypass -File scripts\create_desktop_shortcut.ps1 -RepoPath "C:\src\TUI Bible"
+powershell -ExecutionPolicy Bypass -File scripts\create_desktop_shortcut.ps1 -ShortcutName "TUI Bible Dev"
 ```
 
-Pass `-RepoPath <path>` to point the shortcut at a different checkout, or
-`-ShortcutName <name>` to change the icon label. The script only writes a
-`.lnk` file on the Desktop; delete it like any other shortcut to remove it.
+The script only writes a `.lnk` file on the Desktop; delete it like any other
+shortcut to remove it. Installing from a wheel (which does not ship `scripts/`)
+skips the shortcut with a notice.
 
 ## Development checks
 

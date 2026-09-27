@@ -48,6 +48,28 @@ def test_default_input_dir_points_to_bundled_startup():
     assert cli._default_input_dir() == ROOT / "startup"
 
 
+def test_shortcut_script_is_bundled():
+    assert cli._shortcut_script() == ROOT / "scripts" / "create_desktop_shortcut.ps1"
+
+
+def _fail_on_run(*_args, **_kwargs):
+    raise AssertionError("subprocess.run should not be called")
+
+
+def test_install_desktop_shortcut_is_windows_only(monkeypatch):
+    monkeypatch.setattr(cli.sys, "platform", "linux")
+    monkeypatch.delenv("OPENGNT_NO_DESKTOP_SHORTCUT", raising=False)
+    monkeypatch.setattr(cli.subprocess, "run", _fail_on_run)
+    cli._install_desktop_shortcut()
+
+
+def test_install_desktop_shortcut_respects_opt_out(monkeypatch):
+    monkeypatch.setattr(cli.sys, "platform", "win32")
+    monkeypatch.setenv("OPENGNT_NO_DESKTOP_SHORTCUT", "1")
+    monkeypatch.setattr(cli.subprocess, "run", _fail_on_run)
+    cli._install_desktop_shortcut()
+
+
 def test_bundled_bj_pickle_is_available():
     assert (ROOT / "startup" / "bibliaEsp.pk").is_file()
 
