@@ -34,6 +34,7 @@ from opengnt_interface.services import InterlinearService, TranslationService, V
 from opengnt_interface.repositories import TranslationRepository, VariantRepository
 from opengnt_interface.bible_books import parse_reference
 from opengnt_interface.paths import backups_directory, database_path, dictionary_path
+from opengnt_interface.translation_source import write_translation_json
 
 app = typer.Typer(help="OpenGNT Interface CLI")
 console = Console()
@@ -52,17 +53,6 @@ def _required_input(input_dir: Path, filename: str) -> Path:
     if not path.is_file():
         raise typer.BadParameter(f"Required local input not found: {path}")
     return path
-
-
-def _confirm_optional_resource(label: str, path: Path) -> None:
-    """Require an interactive, per-resource acknowledgement for local add-ons."""
-    prompt = (
-        f"You selected {label} ({path}). Do you have all required rights to use, "
-        "convert, and store this resource locally?"
-    )
-    if not typer.confirm(prompt, default=False):
-        console.print(f"[yellow]Skipped setup: rights were not confirmed for {label}.[/yellow]")
-        raise typer.Exit(code=2)
 
 
 def _default_input_dir() -> Path:
@@ -84,19 +74,17 @@ def setup(
     full_install: bool = typer.Option(False, "--full-install", "-f", help="Install every bundled resource in one step, without prompts"),
     include_lemma_glosses: bool = typer.Option(False, help="Install the bundled GK Spanish-gloss CSV"),
     include_latin: bool = typer.Option(False, help="Install the bundled Latin translation JSON"),
-    include_bj: bool = typer.Option(False, help="Install a local Biblia de Jerusalen JSON (restricted; not bundled)"),
+    include_bj: bool = typer.Option(False, help="Install the bundled Biblia de Jerusalen translation (startup/bibliaEsp.pk)"),
     include_dictionary: bool = typer.Option(False, help="Install the bundled Abbott-Smith dictionary JSON"),
     overwrite: bool = typer.Option(False, help="Replace an existing output database"),
 ):
     """Build a local database from the bundled inputs.
 
-    By default this installs the OpenGNT reading plus every bundled optional
-    resource (lemma glosses, Abbott-Smith dictionary, Latin translation) in one
+    By default this installs the OpenGNT reading plus every bundled resource
+    (lemma glosses, Abbott-Smith dictionary, Latin translation, and the
+    Biblia de Jerusalen translation built from startup/bibliaEsp.pk) in one
     step.  It never downloads anything and deliberately omits embedded NA28
-    variants.  The copyrighted Biblia de Jerusalen text is not bundled and is
-    installed only on request with --include-bj, which asks for a per-resource
-    licence confirmation.  A provenance manifest is written next to the
-    database.
+    variants.  A provenance manifest is written next to the database.
     """
     input_dir = (input_dir or _default_input_dir()).expanduser()
 
@@ -104,12 +92,14 @@ def setup(
         include_lemma_glosses = True
         include_latin = True
         include_dictionary = True
+        include_bj = True
 
     if not (include_lemma_glosses or include_latin or include_dictionary or include_bj):
-        # Plain `setup` is the one-command install of the reviewed, bundled set.
+        # Plain `setup` is the one-command install of the bundled set.
         include_lemma_glosses = True
         include_latin = True
         include_dictionary = True
+        include_bj = True
 
     if not input_dir.is_dir():
         console.print(f"[red]Input directory not found: {input_dir}[/red]")
@@ -122,19 +112,19 @@ def setup(
         console.print(f"[red]Output already exists: {output}. Use --overwrite only after backing it up.[/red]")
         raise typer.Exit(code=1)
 
+    spanish_source = _required_input(input_dir, "bibliaEsp.pk") if include_bj else None
+
     selected_inputs = {"main_csv": main_csv, "morphology_csv": morph_csv}
     optional_inputs = [
         (include_lemma_glosses, "lemma_glosses", "GK_lemma_SpanishGloss.csv"),
         (include_latin, "latin", "latin_vulgate.json"),
-        (include_bj, "bj", "spanish_bible.json"),
         (include_dictionary, "abbotsmith_dictionary", "abbotsmith.json"),
     ]
     for enabled, label, filename in optional_inputs:
         if enabled:
             selected_inputs[label] = _required_input(input_dir, filename)
-
-    if include_bj:
-        _confirm_optional_resource("Biblia de Jerusalen", selected_inputs["bj"])
+    if spanish_source is not None:
+        selected_inputs["bj"] = spanish_source
 
     output.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(dir=output.parent, prefix="opengnt-setup-") as temporary_dir:
@@ -144,10 +134,16 @@ def setup(
             if include_lemma_glosses:
                 from opengnt_interface.importers import populate_lemma_translations
                 populate_lemma_translations(str(temporary_db), str(selected_inputs["lemma_glosses"]))
+            spanish_json = None
+            if include_bj:
+                # Derive the importer JSON from the bundled pickle on the fly so
+                # only the single source file needs to be tracked.
+                spanish_json = Path(temporary_dir) / "spanish_bible.json"
+                write_translation_json(spanish_source, spanish_json)
             if include_latin or include_bj:
                 from opengnt_interface.bible_translation_importer import BibleTranslationImporter
                 BibleTranslationImporter(temporary_db).import_both(
-                    selected_inputs.get("bj"), selected_inputs.get("latin")
+                    spanish_json, selected_inputs.get("latin")
                 )
         except Exception as error:
             console.print(f"[bold red]Setup failed; the existing database was left unchanged:[/bold red] {error}")
@@ -165,7 +161,7 @@ def setup(
     manifest = {
         "created_at": datetime.now(timezone.utc).isoformat(),
         "database": str(output),
-        "bj_license_confirmed": include_bj,
+        "bj_installed": include_bj,
         "primary_variant": "opengnt",
         "na28_variants_installed": False,
         "inputs": {label: {"path": str(path), "sha256": _sha256(path)} for label, path in selected_inputs.items()},

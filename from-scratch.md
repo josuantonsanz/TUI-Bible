@@ -9,8 +9,7 @@ This document preserves the historical context only.
 
 ## Input files
 
-The working tree used these files, now tracked in `startup/` except for the
-restricted BJ text:
+The working tree used these files, now tracked in `startup/`:
 
 | Filename | Role | Distribution |
 | --- | --- | --- |
@@ -19,7 +18,7 @@ restricted BJ text:
 | `GK_lemma_SpanishGloss.csv` | Spanish lemma glosses. | Bundled, CC BY-SA 4.0 derivative. |
 | `abbotsmith.json` | Abbott-Smith lookup resource, extracted via the Logeion API. | Bundled; digitisation terms under review. |
 | `latin_vulgate.json` | Latin Vulgate verse translation. | Bundled, public domain. |
-| `spanish_bible.json` | Biblia de Jerusalén verse translation. | Restricted; **not** bundled. |
+| `bibliaEsp.pk` | Biblia de Jerusalén Spanish source pickle. | Bundled; converted to JSON during setup. |
 
 ## What was repaired
 

@@ -14,8 +14,7 @@ live in the per-user application-data directory and are ignored by Git.
 
 Bundling a file here is a deliberate distribution decision backed by the
 licence recorded below. It is not a statement that every possible input is
-redistributable: the *Biblia de Jerusalén*-derived Spanish text stays
-local-only.
+redistributable: embedded NA28 variants remain outside the supported setup.
 
 ## Bundled assets
 
@@ -26,6 +25,7 @@ local-only.
 | `startup/GK_lemma_SpanishGloss.csv` | Spanish derivative of OpenGNT `Glossary/GK_lemma_EnglishGloss.csv`, produced by machine translation. | **CC BY-SA 4.0** (derivative) | Same as above; keep share-alike. | Bundled |
 | `startup/abbotsmith.json` | *A Manual Greek Lexicon of the New Testament*, G. Abbott-Smith (1922), retrieved via the [Logeion API](https://logeion.uchicago.edu/) (University of Chicago). | Public-domain text; digitisation/API terms under review. | Attribution to Abbott-Smith and Logeion. | Bundled — **digitisation terms under review** |
 | `startup/latin_vulgate.json` | Latin Vulgate (Clementine) retrieved from [sacred-texts.com](https://sacred-texts.com/bib/vul/). | Public domain. | None required; keep source note. | Bundled |
+| `startup/bibliaEsp.pk` | *Biblia de Jerusalén*-derived Spanish New Testament, bundled as a Python pickle. Setup converts it to JSON in a temporary directory. | Copyrighted; rights remain with the publishers (Éditions du Cerf / Desclée de Brouwer). | Keep the source note above. | Bundled by maintainer's decision |
 | `opengnt_interface/data/parallels.json` | 367-entry parallel-passage reference metadata consumed by `ParallelPassageService`; contains titles and references, not biblical text. | Project-owned. | — | Bundled |
 
 The OpenGNT data is **share-alike**: any redistributed copy of these CSVs, or of
@@ -37,7 +37,7 @@ that.
 
 | Asset | Reason | Public repository handling |
 | --- | --- | --- |
-| `startup/spanish_bible.json` | *Biblia de Jerusalén*-derived Spanish text, copyrighted. | **Never commit.** Keep local-only; installed only via `--include-bj` plus a `Y/N` licence confirmation. |
+| `startup/spanish_bible.json` | Generated JSON derived from `startup/bibliaEsp.pk` during setup. | Ignored by Git; rebuilt in a temporary directory at install time. |
 | NA28 / NA28-preferred readings | Copyrighted critical edition. | Not installed by the supported setup; never bundle text, variants, or fixtures. |
 | BibleWorks/AGNT material, personal PDFs, keys, notes | Personal or restricted research material. | Keep outside the repository. |
 | User-data `opengnt.db`, `provenance.json`, settings, backups, annotations | Locally created runtime state. | Never publish; written outside the checkout. |

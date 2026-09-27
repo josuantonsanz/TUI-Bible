@@ -7,5 +7,6 @@
 # language statistics.
 startup/*.csv -text -diff linguist-generated
 startup/*.json -text -diff linguist-generated
+startup/*.pk -text -diff linguist-generated
 opengnt_interface/data/parallels.json -diff linguist-generated
 uv.lock -diff linguist-generated

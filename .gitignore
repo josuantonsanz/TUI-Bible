@@ -35,9 +35,10 @@ opengnt.db
 *.db-wal
 backups/
 
-# Restricted material that is NOT redistributable. The Biblia de Jerusalén
-# derived Spanish text stays local-only. Every other startup input is tracked
-# and documented in startup/README.md and docs/data-provenance.md.
+# Generated translation JSON. The single bundled source file
+# (startup/bibliaEsp.pk) is tracked; setup derives this file in a temporary
+# directory at install time. Every startup input is documented in
+# startup/README.md and docs/data-provenance.md.
 startup/spanish_bible.json
 
 # Generated/research output

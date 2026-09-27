@@ -22,23 +22,24 @@ and the working register in [`docs/data-provenance.md`](../docs/data-provenance.
 | `GK_lemma_SpanishGloss.csv` | `--include-lemma-glosses` | Spanish derivative of OpenGNT `Glossary/GK_lemma_EnglishGloss.csv` | CC BY-SA 4.0 |
 | `abbotsmith.json` | `--include-dictionary` | Abbott-Smith (1922) via the [Logeion](https://logeion.uchicago.edu/) API | Public-domain text; digitisation terms under review |
 | `latin_vulgate.json` | `--include-latin` | Latin Vulgate (Clementine), retrieved from [sacred-texts.com](https://sacred-texts.com/bib/vul/) | Public domain |
+| `bibliaEsp.pk` | `--include-bj` | *Biblia de Jerusalén*-derived Spanish text as a Python pickle | © Editorial Verbo Divino / Desclée de Brouwer; used here at the maintainer's discretion |
 
 `setup` copies the dictionary only to the local application-data path
 `<data-dir>/abbotsmith/dictionary.json`; it is not installed as a package asset.
 It creates `<data-dir>/opengnt.db` and a neighbouring `provenance.json` manifest
 by default. Set `OPENGNT_DATA_DIR` to choose another local data directory.
 
-## Restricted material (not bundled)
+## Biblia de Jerusalén source
 
-`spanish_bible.json` is a *Biblia de Jerusalén*-derived Spanish text. It is
-copyrighted, is **not** redistributed here, and is ignored by Git. If you have
-lawful access to a source, build the expected JSON locally with
-`scripts/build_translation_json.py` and install it:
+`bibliaEsp.pk` is the single bundled source for the Spanish translation. Setup
+converts it to the importer JSON in a temporary directory at install time, so
+the derived `spanish_bible.json` is a throwaway artifact and is ignored by Git.
+Install it on its own with:
 
 ```powershell
-uv run python scripts/build_translation_json.py --input <your-source> --output startup/spanish_bible.json
 uv run opengnt setup --include-bj
 ```
 
-`--include-bj` asks a default-no `Y/N` licence question. See
-[`docs/restricted-content-setup.md`](../docs/restricted-content-setup.md).
+If you prefer to keep a converted copy for inspection, rebuild it with
+`scripts/build_translation_json.py --input startup/bibliaEsp.pk --output startup/spanish_bible.json`.
+See [`docs/restricted-content-setup.md`](../docs/restricted-content-setup.md).

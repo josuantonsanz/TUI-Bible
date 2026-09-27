@@ -12,14 +12,13 @@ passages, backups, and experimental stylometric highlighting.
 
 The project is deliberately split into two boundaries:
 
-- **Version-controlled application and reviewed data:** Python source,
+- **Version-controlled application and bundled data:** Python source,
   documentation, examples, UI-string translations, synthetic tests, and the
-  reviewed datasets bundled under `startup/` (OpenGNT, lemma glosses,
-  Abbott-Smith dictionary, Latin Vulgate) with their licences recorded in
-  [`THIRD-PARTY-NOTICES.md`](THIRD-PARTY-NOTICES.md).
+  datasets bundled under `startup/` (OpenGNT, lemma glosses, Abbott-Smith
+  dictionary, Latin Vulgate, and the `bibliaEsp.pk` Spanish source) with their
+  sources recorded in [`THIRD-PARTY-NOTICES.md`](THIRD-PARTY-NOTICES.md).
 - **User-controlled local installation:** a SQLite database built from the
-  bundled data, plus settings, provenance metadata, backups, user edits, and
-  any restricted resource the user supplies locally.
+  bundled data, plus settings, provenance metadata, backups, and user edits.
 
 This distinction is architectural, not merely an ignore rule. The bundled
 assets are documented, licensed, and tracked; anything whose provenance and
@@ -42,7 +41,7 @@ software architecture; it does not establish rights to any input or output.
 | Textual TUI | `uv run opengnt-tui` | The only supported terminal UI for study and local editing. |
 | CLI | `uv run opengnt --help` | Database setup, inspection, search, exports, verification, and backup commands. |
 | One-command install | `uv run opengnt setup --full-install` | Builds a complete local database from the bundled inputs in `startup/`. |
-| Restricted opt-in | `uv run opengnt setup --include-bj` | Installs a user-supplied BJ text that is not bundled, after a `Y/N` licence prompt. |
+| BJ translation | `uv run opengnt setup --include-bj` | Installs the bundled BJ text, converted on the fly from `startup/bibliaEsp.pk`. |
 | Tests | `uv run pytest -q` | Runs synthetic, data-free tests. |
 
 The former prompt-toolkit UI (`opengnt_interface/tui.py`), the CLI command
@@ -94,9 +93,9 @@ or open an empty database in the source checkout.
 └── pyproject.toml / uv.lock          # Python 3.12+ project and locked dependencies
 ```
 
-`startup/` contains the reviewed datasets that ship with the project
-(`startup/spanish_bible.json` is the one exception: it is restricted and
-ignored). The ignore rules also exclude Python environments and caches,
+`startup/` contains the datasets that ship with the project, including the
+`bibliaEsp.pk` Spanish source; the JSON derived from it at install time is
+ignored. The ignore rules also exclude Python environments and caches,
 runtime databases and SQLite sidecars, backups, secrets, the local AI-assistant
 configuration, and generated output.
 
@@ -246,17 +245,13 @@ from a local directory (default `startup/`) and never downloads data.
 | `GK_lemma_SpanishGloss.csv` | `populate_lemma_translations` | bundled; default |
 | `latin_vulgate.json` | `BibleTranslationImporter` | bundled; default |
 | `abbotsmith.json` | copied to local dictionary path | bundled; default |
-| `spanish_bible.json` | `BibleTranslationImporter` | `--include-bj`; restricted, not bundled |
+| `bibliaEsp.pk` | `BibleTranslationImporter` (via `build_translation_json`) | `--include-bj`; bundled; default |
 
 The bundled resources are selected by default (`setup` and `setup
 --full-install` are equivalent); individual `--include-*` flags remain for a
-granular install. Because the bundled assets have already been reviewed and
-recorded in the provenance register, they need no consent step. The only
-resource that requires confirmation is the restricted Biblia de Jerusalén text,
-which the user must supply locally; `--include-bj` asks a default-no `Y/N`
-licence question and aborts before writing a database if the answer is `N`.
-This is intended to make restricted resource selection explicit, not to turn
-the application into an acquisition mechanism.
+granular install. Nothing is downloaded, and setup installs no NA28 variant
+rows. The Spanish translation is derived from the single bundled
+`startup/bibliaEsp.pk` pickle into a temporary directory while setup runs.
 
 ### 7.2 Transactional setup flow
 
@@ -264,8 +259,6 @@ the application into an acquisition mechanism.
 validate input paths
         ↓
 validate every selected optional file and collect it for the manifest
-        ↓
-obtain per-resource confirmations
         ↓
 create a temporary directory beside the requested output
         ↓
@@ -283,7 +276,7 @@ write neighbouring provenance.json with paths, SHA-256 hashes, flags, and time
 An existing output is refused unless `--overwrite` is supplied. The temporary
 build protects the old database when an import fails. `provenance.json` is
 local metadata recording the selected input paths/checksums, setup time,
-rights confirmation for the one restricted resource (if selected),
+whether the BJ translation was installed (`bj_installed`),
 `primary_variant: "opengnt"`, and that NA28 variants
 were not installed.
 
@@ -543,7 +536,7 @@ explicit rather than hidden:
   change. Add a migration strategy before claiming compatibility with existing
   databases.
 - Preserve the safe setup boundary: local files only, explicit optional
-  selection, per-resource confirmation for restricted content, atomic database
+  selection, atomic database
   construction, and local provenance recording.
 - Do not reintroduce a downloader, scraper, hidden acquisition path, or
   destructive edition switch for unreviewed content.

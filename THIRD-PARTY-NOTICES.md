@@ -59,11 +59,21 @@ share-alike requirement of the OpenGNT data.
 - **Licence:** public domain.
 - **Notes:** Verify the source page terms if you redistribute the file itself.
 
+### Biblia de Jerusalén — `startup/bibliaEsp.pk`
+
+- **Source:** *Biblia de Jerusalén* (Spanish edition), distributed here as a
+  Python pickle of the New Testament text.
+- **Rights:** © Les Éditions du Cerf (French original) and the Spanish-language
+  publisher (Desclée de Brouwer). All rights remain with the rights holders.
+- **Notes:** Bundled and installed by the maintainer's decision. Any use,
+  conversion, or redistribution is the responsibility of the person who does
+  it. Setup converts the pickle to JSON in a temporary directory; the derived
+  `startup/spanish_bible.json` is not tracked.
+
 ## Not bundled
 
-The Biblia de Jerusalén-derived Spanish text (`startup/spanish_bible.json`) is
-**not** distributed with this project: it is copyrighted and may not be
-redistributed. It is ignored by Git. See `docs/restricted-content-setup.md`.
+Embedded NA28 / NA28-preferred readings are not distributed and are never
+installed by setup. See `docs/restricted-content-setup.md`.
 
 ## Application dependencies
 

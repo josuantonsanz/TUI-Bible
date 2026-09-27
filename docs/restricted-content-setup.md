@@ -5,13 +5,13 @@
 
 ## Two kinds of input
 
-1. **Bundled, reviewed data** ships in `startup/` and is tracked in Git with its
-   licence recorded in [`THIRD-PARTY-NOTICES.md`](../THIRD-PARTY-NOTICES.md) and
-   [`data-provenance.md`](data-provenance.md). Installing it needs no consent
-   step because the maintainer has already reviewed the terms.
-2. **User-supplied, restricted data** is never bundled and never downloaded. It
-   is installed only when the user supplies the file locally and explicitly
-   acknowledges the right to use it.
+1. **Bundled data** ships in `startup/` and is tracked in Git with its source
+   recorded in [`THIRD-PARTY-NOTICES.md`](../THIRD-PARTY-NOTICES.md) and
+   [`data-provenance.md`](data-provenance.md). This now includes the Spanish
+   *Biblia de Jerusalén* source `startup/bibliaEsp.pk`.
+2. **User-supplied data** is never downloaded. `scripts/build_translation_json.py`
+   converts a source *you* provide into the importer JSON shape. You are
+   responsible for having the rights to whatever you feed it.
 
 ## One-command install of the bundled data
 
@@ -20,28 +20,33 @@ uv sync
 uv run opengnt setup --full-install
 ```
 
-This builds a local SQLite database from the reviewed OpenGNT data plus the
-bundled lemma glosses, Abbott-Smith dictionary, and Latin translation. It never
-downloads anything and deliberately omits embedded NA28 variants. A plain
-`opengnt setup` (no options) installs the same bundled set. `--output` chooses a
-different database path, `--input-dir` a different source directory, and
-`--overwrite` replaces an existing database.
+This builds a local SQLite database from the OpenGNT data plus the bundled
+lemma glosses, Abbott-Smith dictionary, Latin translation, and the Spanish
+translation derived from `startup/bibliaEsp.pk`. It never downloads anything and
+deliberately omits embedded NA28 variants. A plain `opengnt setup` (no options)
+installs the same bundled set. `--output` chooses a different database path,
+`--input-dir` a different source directory, and `--overwrite` replaces an
+existing database.
 
-## Restricted opt-in: Biblia de Jerusalén
+## Biblia de Jerusalén
 
-`startup/spanish_bible.json` is copyrighted and is **not** distributed. A user
-who owns a lawful copy may place it in `startup/` and install it explicitly:
+`startup/bibliaEsp.pk` is the single bundled source for the Spanish translation.
+Setup converts it to the importer JSON in a temporary directory while it runs,
+so the derived `startup/spanish_bible.json` is a throwaway artifact and is
+ignored by Git.
 
 ```powershell
-uv run python scripts/build_translation_json.py --input <your-source> --output startup/spanish_bible.json
 uv run opengnt setup --include-bj
 ```
 
-The command asks a default-no `Y/N` licence question. Answering `N` cancels
-setup before any database is written. `build_translation_json.py` is a
-code-only converter for a source *you* supply: it downloads nothing, and no
-translation is distributed. Do not add the resulting JSON or the source file to
-Git.
+To inspect a converted copy, rebuild it explicitly:
+
+```powershell
+uv run python scripts/build_translation_json.py --input startup/bibliaEsp.pk --output startup/spanish_bible.json
+```
+
+Rights in the *Biblia de Jerusalén* text remain with its publishers. Using,
+converting, or redistributing it is the responsibility of whoever does so.
 
 ## NA28 boundary
 
@@ -60,6 +65,6 @@ git status --short
 git status --ignored --short
 ```
 
-Confirm that `startup/spanish_bible.json`, databases, settings, backups, and
-secrets are ignored, and that every other tracked `startup/` file appears in the
-provenance register.
+Confirm that `startup/bibliaEsp.pk` and the other bundled inputs are tracked,
+while `startup/spanish_bible.json`, databases, settings, backups, and secrets
+are ignored.

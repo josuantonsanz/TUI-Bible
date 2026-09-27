@@ -2,9 +2,6 @@ import subprocess
 import sys
 from pathlib import Path
 
-import pytest
-import typer
-
 ROOT = Path(__file__).parent.parent
 sys.path.append(str(ROOT))
 
@@ -27,12 +24,12 @@ def test_cli_help_lists_setup_command():
     assert "setup" in result.stdout
 
 
-def test_setup_help_documents_restricted_bj_option():
+def test_setup_help_documents_bj_option():
     result = run_cli("setup", "--help")
     assert result.returncode == 0
     # Rich wraps long options to the current terminal width.
     assert "include-bj" in result.stdout
-    assert "acknowledge-local" not in result.stdout
+    assert "bibliaEsp.pk" in result.stdout
 
 
 def test_setup_help_documents_full_install():
@@ -45,24 +42,8 @@ def test_default_input_dir_points_to_bundled_startup():
     assert cli._default_input_dir() == ROOT / "startup"
 
 
-def test_optional_resource_rights_confirmation_accepts_yes(monkeypatch, tmp_path):
-    calls = []
-    monkeypatch.setattr(cli.typer, "confirm", lambda prompt, default: calls.append((prompt, default)) or True)
-
-    cli._confirm_optional_resource("dictionary", tmp_path / "abbotsmith.json")
-
-    assert len(calls) == 1
-    assert calls[0][1] is False
-    assert "dictionary" in calls[0][0]
-
-
-def test_optional_resource_rights_confirmation_rejects_no(monkeypatch, tmp_path):
-    monkeypatch.setattr(cli.typer, "confirm", lambda prompt, default: False)
-
-    with pytest.raises(typer.Exit) as error:
-        cli._confirm_optional_resource("bj", tmp_path / "spanish_bible.json")
-
-    assert error.value.exit_code == 2
+def test_bundled_bj_pickle_is_available():
+    assert (ROOT / "startup" / "bibliaEsp.pk").is_file()
 
 
 def test_read_without_an_installed_database_fails_cleanly(tmp_path):

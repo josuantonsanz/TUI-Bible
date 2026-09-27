@@ -12,12 +12,11 @@ under `startup/`:
 - `GK_lemma_SpanishGloss.csv` (CC BY-SA 4.0 derivative of the OpenGNT glossary);
 - `abbotsmith.json` (Abbott-Smith 1922 via Logeion; digitisation terms under
   review);
-- `latin_vulgate.json` (public-domain Vulgate).
+- `latin_vulgate.json` (public-domain Vulgate);
+- `bibliaEsp.pk` (the *Biblia de Jerusalén*-derived Spanish source).
 
-The copyrighted Biblia de Jerusalén text (`startup/spanish_bible.json`) is **not**
-bundled, is ignored by Git, and is installed only on explicit request. NA28
-variants, AGNT/BibleWorks material, PDFs, credentials, backups, and personal
-annotations are not distributed.
+NA28 variants, AGNT/BibleWorks material, PDFs, credentials, backups, and
+personal annotations are not distributed.
 
 The supported one-command local bootstrap is:
 
@@ -30,8 +29,8 @@ uv run opengnt-tui
 `setup` reads the bundled inputs, builds a temporary database before moving it
 into place, writes a local provenance manifest with checksums, and defaults to
 the OpenGNT reading with no NA28 variant rows. A plain `setup` installs the same
-bundled set. The restricted `--include-bj` path asks a default-no `Y/N` licence
-question before it writes anything.
+bundled set, including the Spanish translation derived on the fly from
+`startup/bibliaEsp.pk`.
 
 ## Completed remediation
 
@@ -39,7 +38,8 @@ question before it writes anything.
   (`THIRD-PARTY-NOTICES.md`, `docs/data-provenance.md`, `startup/README.md`).
 - [x] Add a one-command install (`setup --full-install`) and console entry
   points (`opengnt`, `opengnt-tui`).
-- [x] Keep the copyrighted Biblia de Jerusalén text out of Git.
+- [x] Bundle the Biblia de Jerusalén source pickle and derive the importer JSON
+  from it during setup.
 - [x] Add the MIT code licence and package metadata; drop unused dependencies.
 - [x] Add a safe setup path with overwrite protection and a provenance manifest.
 - [x] Resolve the CLI/TUI/settings/database-path split with one user-data
@@ -64,8 +64,7 @@ question before it writes anything.
    NA28 choice. The current schema must not mutate the base text or conflate
    edition-specific readings with OpenGNT data.
 3. **Translation resources.** Replace fixed `spanish_text` and `latin_text`
-   fields with resource/edition metadata, attribution, and user-consent records.
-   BJ must remain unavailable except to an authorised local user.
+   fields with resource/edition metadata and attribution records.
 4. **Stylometry.** The optional stylometry data is not part of the bundled set;
    confirm how it is generated and loaded before documenting it as a feature.
 5. **Release testing.** Test a clean clone on supported platforms. Cover setup

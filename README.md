@@ -39,20 +39,21 @@ Set `OPENGNT_DATA_DIR` to choose another directory. The command creates
 
 | Command | Result |
 | --- | --- |
-| `opengnt setup` | Same as `--full-install` (the reviewed, bundled set). |
+| `opengnt setup` | Same as `--full-install` (every bundled resource). |
 | `opengnt setup --full-install` | Install every bundled resource in one step. |
 | `opengnt setup --include-lemma-glosses` | Bundled Spanish lemma glosses only. |
 | `opengnt setup --include-dictionary` | Bundled Abbott-Smith dictionary only. |
 | `opengnt setup --include-latin` | Bundled Latin translation only. |
-| `opengnt setup --include-bj` | Install a **local** Biblia de Jerusalén JSON that you own (not bundled); asks for a licence confirmation. |
+| `opengnt setup --include-bj` | Bundled Biblia de Jerusalén translation only (built from `startup/bibliaEsp.pk`). |
 | `opengnt setup --output <path>` | Write the database to a specific file. |
 | `opengnt setup --overwrite` | Replace an existing database. |
 
-`--include-bj` asks a single interactive `Y/N` licence question; answering `N`
-cancels setup before any database is written. The file is copyrighted and is
-not distributed here. If you have a source you are entitled to use, build the
-expected JSON locally with [`scripts/build_translation_json.py`](scripts/build_translation_json.py)
-(see [restricted-content policy](docs/restricted-content-setup.md)).
+`--include-bj` builds the Spanish translation from the bundled
+`startup/bibliaEsp.pk` pickle while setup runs. The derived JSON is written to a
+temporary directory, so only the single source file is tracked. You can still
+convert a source you supply yourself with
+[`scripts/build_translation_json.py`](scripts/build_translation_json.py) (see
+[content and setup policy](docs/restricted-content-setup.md)).
 
 ## Development checks
 
