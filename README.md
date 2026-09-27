@@ -4,22 +4,43 @@ OpenGNT Interface is an early-stage, keyboard-driven terminal application for
 studying and annotating the Greek New Testament. Its primary interface is a
 [Textual](https://textual.textualize.io/) TUI with interlinear display,
 morphology and gloss fields, annotations, concordance/reference search, and an
-optional local dictionary.
+optional local dictionary. The project is published as **TUI Bible**.
 
 > **Publication status — work in progress.** The application code is released
 > under the MIT licence. The bundled Greek text and reference data keep their
 > own licences (the OpenGNT data is CC BY-SA 4.0); see
 > [third-party notices](THIRD-PARTY-NOTICES.md).
 
-## Install and run
+## Download and install
 
-[`uv`](https://docs.astral.sh/uv/) is the supported installer. From a clone:
+Copy this whole block into PowerShell (Windows) or a terminal (macOS/Linux). It
+downloads the project, installs its dependencies, builds the local database,
+and starts the app:
 
 ```powershell
-uv sync
+git clone https://github.com/josuantonsanz/TUI-Bible.git
+cd TUI-Bible
 uv run opengnt setup --full-install
 uv run opengnt-tui
 ```
+
+[`uv`](https://docs.astral.sh/uv/) is the supported installer and installs a
+suitable Python for you; `git` must also be available. If `uv` is missing,
+install it first, then re-run the block above:
+
+```powershell
+# Windows (PowerShell)
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+
+# macOS / Linux
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+The first `uv run` creates the environment and resolves dependencies on its own,
+so a separate `uv sync` is optional.
+
+On Windows you can also add a Desktop shortcut that performs this bootstrap on
+first launch; see [Desktop shortcut](#desktop-shortcut).
 
 `setup --full-install` is the one-command build. It imports the bundled
 [OpenGNT](https://github.com/eliranwong/OpenGNT) reading plus the bundled lemma
@@ -61,6 +82,21 @@ convert a source you supply yourself with
 and replaces the main word with it, keeping the original OpenGNT reading in the
 `variants` table. `--full-install` turns it on. Plain `setup` leaves the Greek
 text as OpenGNT.
+
+## Desktop shortcut
+
+Windows users can launch the app from a Desktop icon. The shortcut runs
+[`scripts/launch_tui.cmd`](scripts/launch_tui.cmd), which installs dependencies
+and builds the database the first time and then opens the TUI. Create it from a
+clone with:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\create_desktop_shortcut.ps1
+```
+
+Pass `-RepoPath <path>` to point the shortcut at a different checkout, or
+`-ShortcutName <name>` to change the icon label. The script only writes a
+`.lnk` file on the Desktop; delete it like any other shortcut to remove it.
 
 ## Development checks
 

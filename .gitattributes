@@ -10,3 +10,7 @@ startup/*.json -text -diff linguist-generated
 startup/*.pk -text -diff linguist-generated
 opengnt_interface/data/parallels.json -diff linguist-generated
 uv.lock -diff linguist-generated
+
+# Windows launchers must keep CRLF line endings to run reliably in cmd.exe.
+*.cmd text eol=crlf
+*.bat text eol=crlf
