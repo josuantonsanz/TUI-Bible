@@ -38,6 +38,12 @@ def test_setup_help_documents_full_install():
     assert "full-install" in result.stdout
 
 
+def test_setup_help_documents_na28_option():
+    result = run_cli("setup", "--help")
+    assert result.returncode == 0
+    assert "include-na28" in result.stdout
+
+
 def test_default_input_dir_points_to_bundled_startup():
     assert cli._default_input_dir() == ROOT / "startup"
 

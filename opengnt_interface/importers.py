@@ -23,6 +23,13 @@ logging.basicConfig(
 logger = logging.getLogger("opengnt.importer")
 console = Console()
 
+# OpenGNT records the relationship between a main word and NA28 in the Note
+# slot of the variant field using full-width symbols:
+#   '＊' -> the main word differs from NA28 (substantive variant)
+#   '＝' -> the main word matches NA28 apart from an orthographic difference
+# Both carry the NA28 reading in Mvar, so both are used when NA28 is primary.
+NA28_NOTE_MARKERS = ("＊", "＝")
+
 
 @dataclass
 class ImportStats:
@@ -376,8 +383,17 @@ class OpenGNTImporter:
             task = progress.add_task("[green]Inserting words...", total=len(words))
 
             for word in words:
-                # Check if we need to swap the main word with the variant
-                if self.primary_variant == 'na28' and word['variant_data'] and word['variant_data']['mvar'] and '*' in word.get('note', ''):
+                # When NA28 is the primary text, replace the main word with the
+                # NA28 reading carried in the variant field.  Only rows marked
+                # with a NA28 note symbol have a counterpart to activate.
+                original_note = word.get('note') or ''
+                swapped_to_na28 = False
+                if (
+                    self.primary_variant == 'na28'
+                    and word['variant_data']
+                    and word['variant_data']['mvar']
+                    and any(marker in original_note for marker in NA28_NOTE_MARKERS)
+                ):
                     # Store original OpenGNT data
                     original_data = {
                         'greek_accented': word['greek_accented'],
@@ -387,7 +403,7 @@ class OpenGNTImporter:
                         'tbesg_gloss': word['tbesg_gloss']
                     }
 
-                    # Overwrite main word data with variant data
+                    # Overwrite main word data with the NA28 variant data
                     vdata = word['variant_data']
                     word['greek_accented'] = vdata['mvar']
                     word['lexeme'] = vdata['mlexeme']
@@ -403,7 +419,8 @@ class OpenGNTImporter:
                         'msn': original_data['strongs'],
                         'mtbesg': original_data['tbesg_gloss'],
                     }
-                    word['note'] = 'OGNT' # The note now refers to the OpenGNT variant
+                    word['note'] = f'NA28 ({original_note})'
+                    swapped_to_na28 = True
 
                 # Insert word
                 cursor.execute("""
@@ -443,19 +460,20 @@ class OpenGNTImporter:
                 word_id = cursor.lastrowid
                 self.stats.words_imported += 1
 
-                # Insert variant if present
+                # Insert the alternative reading if requested
                 if self.include_na28 and word['variant_data'] and word['variant_data']['mvar']:
                     vdata = word['variant_data']
 
-                    # Determine the source and is_primary flag
-                    if self.primary_variant == 'na28' and '*' in word.get('note', ''):
+                    if swapped_to_na28:
+                        # The main word is now the NA28 reading, so the stored
+                        # variant is the original OpenGNT reading.
                         source = 'OpenGNT'
-                        is_primary = 0
-                        notes = 'Variant from OpenGNT'
+                        notes = f'Variant from OpenGNT ({original_note})'
                     else:
+                        # The main word stays OpenGNT; the stored variant is NA28.
                         source = 'NA28'
-                        is_primary = 1 if '*' in word.get('note', '') else 0
-                        notes = word['note']
+                        notes = original_note
+                    is_primary = 0
 
                     cursor.execute("""
                                    INSERT INTO variants (word_id, variant_text, variant_lexeme, variant_rmac,

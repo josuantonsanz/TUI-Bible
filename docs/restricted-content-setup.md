@@ -21,12 +21,13 @@ uv run opengnt setup --full-install
 ```
 
 This builds a local SQLite database from the OpenGNT data plus the bundled
-lemma glosses, Abbott-Smith dictionary, Latin translation, and the Spanish
-translation derived from `startup/bibliaEsp.pk`. It never downloads anything and
-deliberately omits embedded NA28 variants. A plain `opengnt setup` (no options)
-installs the same bundled set. `--output` chooses a different database path,
-`--input-dir` a different source directory, and `--overwrite` replaces an
-existing database.
+lemma glosses, Abbott-Smith dictionary, Latin translation, the Spanish
+translation derived from `startup/bibliaEsp.pk`, and the NA28 readings embedded
+in the OpenGNT variant field, which become the primary Greek text. It never
+downloads anything. A plain `opengnt setup` (no options) installs the bundled
+translations but leaves the Greek text as OpenGNT with no NA28 rows.
+`--output` chooses a different database path, `--input-dir` a different source
+directory, and `--overwrite` replaces an existing database.
 
 ## Biblia de Jerusalén
 
@@ -48,13 +49,26 @@ uv run python scripts/build_translation_json.py --input startup/bibliaEsp.pk --o
 Rights in the *Biblia de Jerusalén* text remain with its publishers. Using,
 converting, or redistributing it is the responsibility of whoever does so.
 
-## NA28 boundary
+## NA28 readings
 
-The bundled OpenGNT CSV contains variant-related fields. The implemented setup
-always selects the OpenGNT reading and omits all NA28 variant rows. There is no
-public `--include-na28` option: the current schema cannot store editions safely
-as independent layers. Do not publish a database produced by the old
-destructive NA28 workflow.
+The bundled OpenGNT CSV carries the NA28 reading for each word that differs from
+it, in the `〔Note｜Mvar｜...〕` field. `--full-install` (or `--include-na28` on
+its own) reads that field and builds the NA28 text:
+
+```powershell
+uv run opengnt setup --include-na28
+```
+
+For every word marked `＊` (differs from NA28) or `＝` (orthographic difference
+only), setup replaces the main word with the NA28 reading and stores the
+original OpenGNT reading in the `variants` table with `source='OpenGNT'`. The
+provenance manifest records `primary_variant: "na28"` and
+`na28_variants_installed: true`. Plain `setup` keeps the OpenGNT reading and
+inserts no variant rows.
+
+Rights in the NA28 text remain with its publishers. Installing it is the
+responsibility of whoever runs the command. The separate `opengnt import-data`
+command also accepts `--variant-mode na28` for the same behaviour.
 
 ## Publishing check
 

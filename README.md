@@ -23,8 +23,9 @@ uv run opengnt-tui
 
 `setup --full-install` is the one-command build. It imports the bundled
 [OpenGNT](https://github.com/eliranwong/OpenGNT) reading plus the bundled lemma
-glosses, Abbott-Smith dictionary, and Latin translation, and deliberately omits
-embedded NA28 variants. It never downloads anything.
+glosses, Abbott-Smith dictionary, Latin translation, the Biblia de Jerusalén
+translation, and the NA28 readings embedded in the OpenGNT variant field, which
+become the primary Greek text. It never downloads anything.
 
 The mutable data directory is written outside the checkout by default:
 
@@ -39,12 +40,13 @@ Set `OPENGNT_DATA_DIR` to choose another directory. The command creates
 
 | Command | Result |
 | --- | --- |
-| `opengnt setup` | Same as `--full-install` (every bundled resource). |
-| `opengnt setup --full-install` | Install every bundled resource in one step. |
+| `opengnt setup` | Bundled translations (lemma glosses, dictionary, Latin, Biblia de Jerusalén), leaving the Greek text as OpenGNT without NA28 variants. |
+| `opengnt setup --full-install` | Everything in `setup` plus the embedded NA28 readings, activated as the primary Greek text. |
 | `opengnt setup --include-lemma-glosses` | Bundled Spanish lemma glosses only. |
 | `opengnt setup --include-dictionary` | Bundled Abbott-Smith dictionary only. |
 | `opengnt setup --include-latin` | Bundled Latin translation only. |
 | `opengnt setup --include-bj` | Bundled Biblia de Jerusalén translation only (built from `startup/bibliaEsp.pk`). |
+| `opengnt setup --include-na28` | Install the embedded NA28 readings only, activated as the primary Greek text. |
 | `opengnt setup --output <path>` | Write the database to a specific file. |
 | `opengnt setup --overwrite` | Replace an existing database. |
 
@@ -54,6 +56,11 @@ temporary directory, so only the single source file is tracked. You can still
 convert a source you supply yourself with
 [`scripts/build_translation_json.py`](scripts/build_translation_json.py) (see
 [content and setup policy](docs/restricted-content-setup.md)).
+
+`--include-na28` reads the NA28 reading recorded in the OpenGNT variant field
+and replaces the main word with it, keeping the original OpenGNT reading in the
+`variants` table. `--full-install` turns it on. Plain `setup` leaves the Greek
+text as OpenGNT.
 
 ## Development checks
 

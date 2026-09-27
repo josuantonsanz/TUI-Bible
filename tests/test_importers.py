@@ -26,7 +26,8 @@ def write_fixture_inputs(directory: Path) -> tuple[Path, Path]:
         "〔TBESG｜IT｜LT｜ST｜Español〕": "〔book｜libro｜liber｜book｜libro〕",
         "〔PMpWord｜PMfWord〕": "〔｜〕",
         # A variant in the fixture verifies that the default setup does not retain NA28 data.
-        "〔Note｜Mvar｜Mlexeme｜Mrmac｜Msn｜MTBESG〕": "〔*｜βίβλου｜βίβλος｜N-GSF｜976｜book〕",
+        # OpenGNT marks NA28-related readings with full-width symbols in the Note slot.
+        "〔Note｜Mvar｜Mlexeme｜Mrmac｜Msn｜MTBESG〕": "〔＊｜βίβλου｜βίβλος｜N-GSF｜976｜book〕",
     }
     with main_csv.open("w", encoding="utf-8", newline="") as output:
         writer = csv.DictWriter(output, fieldnames=fields, delimiter="\t")
@@ -53,3 +54,41 @@ def test_fresh_import_matches_declared_schema_and_omits_na28(tmp_path):
         ).fetchone()
         assert word == ("vivlos", "libro", "liber", "book", "N-NSF")
         assert connection.execute("SELECT COUNT(*) FROM variants").fetchone()[0] == 0
+
+
+def test_na28_import_activates_the_variant_and_keeps_opengnt(tmp_path):
+    main_csv, morph_csv = write_fixture_inputs(tmp_path)
+    database = tmp_path / "opengnt.db"
+
+    stats = OpenGNTImporter(
+        database, primary_variant="na28", include_na28=True
+    ).run_import(main_csv, morph_csv)
+
+    assert stats.words_imported == 1
+    assert stats.variants_created == 1
+    with sqlite3.connect(database) as connection:
+        # The main word is now the NA28 reading.
+        word = connection.execute(
+            "SELECT greek_accented, lexeme, rmac, strongs FROM words"
+        ).fetchone()
+        assert word == ("βίβλου", "βίβλος", "N-GSF", "976")
+        # The original OpenGNT reading is stored as a variant.
+        variant = connection.execute(
+            "SELECT variant_text, source, is_primary FROM variants"
+        ).fetchone()
+        assert variant == ("βίβλος", "OpenGNT", 0)
+
+
+def test_include_na28_without_activation_stores_the_na28_variant(tmp_path):
+    main_csv, morph_csv = write_fixture_inputs(tmp_path)
+    database = tmp_path / "opengnt.db"
+
+    stats = OpenGNTImporter(database, include_na28=True).run_import(main_csv, morph_csv)
+
+    assert stats.variants_created == 1
+    with sqlite3.connect(database) as connection:
+        assert connection.execute("SELECT greek_accented FROM words").fetchone()[0] == "βίβλος"
+        variant = connection.execute(
+            "SELECT variant_text, source, is_primary FROM variants"
+        ).fetchone()
+        assert variant == ("βίβλου", "NA28", 0)

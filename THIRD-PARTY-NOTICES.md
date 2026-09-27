@@ -70,10 +70,13 @@ share-alike requirement of the OpenGNT data.
   it. Setup converts the pickle to JSON in a temporary directory; the derived
   `startup/spanish_bible.json` is not tracked.
 
-## Not bundled
+## NA28 readings
 
-Embedded NA28 / NA28-preferred readings are not distributed and are never
-installed by setup. See `docs/restricted-content-setup.md`.
+The NA28 reading of each differing word is carried in the variant field of the
+bundled `startup/OpenGNT_version3_3.csv`. It is not distributed as separate
+text: setup installs it only when `--full-install` or `--include-na28` is used,
+and the person running setup is responsible for the rights to keep it. See
+`docs/restricted-content-setup.md`.
 
 ## Application dependencies
 

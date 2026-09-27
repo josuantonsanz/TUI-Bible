@@ -75,6 +75,7 @@ def setup(
     include_lemma_glosses: bool = typer.Option(False, help="Install the bundled GK Spanish-gloss CSV"),
     include_latin: bool = typer.Option(False, help="Install the bundled Latin translation JSON"),
     include_bj: bool = typer.Option(False, help="Install the bundled Biblia de Jerusalen translation (startup/bibliaEsp.pk)"),
+    include_na28: bool = typer.Option(False, "--include-na28", help="Install the NA28 readings from the OpenGNT variant field and use them as the primary text"),
     include_dictionary: bool = typer.Option(False, help="Install the bundled Abbott-Smith dictionary JSON"),
     overwrite: bool = typer.Option(False, help="Replace an existing output database"),
 ):
@@ -83,8 +84,10 @@ def setup(
     By default this installs the OpenGNT reading plus every bundled resource
     (lemma glosses, Abbott-Smith dictionary, Latin translation, and the
     Biblia de Jerusalen translation built from startup/bibliaEsp.pk) in one
-    step.  It never downloads anything and deliberately omits embedded NA28
-    variants.  A provenance manifest is written next to the database.
+    step.  It never downloads anything.  --full-install additionally installs
+    the NA28 readings embedded in the OpenGNT variant field and makes them the
+    primary text; --include-na28 does the same on its own.  A provenance
+    manifest is written next to the database.
     """
     input_dir = (input_dir or _default_input_dir()).expanduser()
 
@@ -93,9 +96,10 @@ def setup(
         include_latin = True
         include_dictionary = True
         include_bj = True
+        include_na28 = True
 
-    if not (include_lemma_glosses or include_latin or include_dictionary or include_bj):
-        # Plain `setup` is the one-command install of the bundled set.
+    if not (include_lemma_glosses or include_latin or include_dictionary or include_bj or include_na28):
+        # Plain `setup` installs the bundled resources but leaves NA28 out.
         include_lemma_glosses = True
         include_latin = True
         include_dictionary = True
@@ -130,7 +134,10 @@ def setup(
     with tempfile.TemporaryDirectory(dir=output.parent, prefix="opengnt-setup-") as temporary_dir:
         temporary_db = Path(temporary_dir) / output.name
         try:
-            stats = OpenGNTImporter(temporary_db, primary_variant="opengnt").run_import(main_csv, morph_csv)
+            primary_variant = "na28" if include_na28 else "opengnt"
+            stats = OpenGNTImporter(
+                temporary_db, primary_variant=primary_variant, include_na28=include_na28
+            ).run_import(main_csv, morph_csv)
             if include_lemma_glosses:
                 from opengnt_interface.importers import populate_lemma_translations
                 populate_lemma_translations(str(temporary_db), str(selected_inputs["lemma_glosses"]))
@@ -162,22 +169,22 @@ def setup(
         "created_at": datetime.now(timezone.utc).isoformat(),
         "database": str(output),
         "bj_installed": include_bj,
-        "primary_variant": "opengnt",
-        "na28_variants_installed": False,
+        "primary_variant": "na28" if include_na28 else "opengnt",
+        "na28_variants_installed": include_na28,
         "inputs": {label: {"path": str(path), "sha256": _sha256(path)} for label, path in selected_inputs.items()},
     }
     manifest_path = output.with_name("provenance.json")
     manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     console.print(f"[bold green]Setup complete.[/bold green] Database: {output}")
     console.print(f"Provenance manifest: {manifest_path}")
-    console.print(f"Words: {stats.words_imported}; NA28 variants installed: 0")
+    console.print(f"Words: {stats.words_imported}; NA28 variants installed: {stats.variants_created}")
 
 @app.command()
 def import_data(
     csv_path: Path = typer.Option(..., help="Path to main OpenGNT CSV file"),
     morph_path: Path = typer.Option(..., help="Path to morphology CSV file (keyedFeatures)"),
     db_path: Path = typer.Option(database_path(), help="Output SQLite database path"),
-    variant_mode: str = typer.Option("opengnt", help="Primary text variant; only 'opengnt' is supported")
+    variant_mode: str = typer.Option("opengnt", help="Primary text variant: 'opengnt' or 'na28'")
 ):
     """
     Import OpenGNT data into the database.
@@ -195,12 +202,14 @@ def import_data(
     console.print(f"  Morphology: {morph_path}")
     console.print(f"  Target DB: {db_path}")
 
-    if variant_mode != "opengnt":
-        console.print("[red]NA28 selection is not supported by this command. Use only an authorised local workflow after edition-aware storage is implemented.[/red]")
+    if variant_mode not in {"opengnt", "na28"}:
+        console.print("[red]variant-mode must be 'opengnt' or 'na28'.[/red]")
         raise typer.Exit(code=2)
 
     try:
-        importer = OpenGNTImporter(db_path, primary_variant="opengnt")
+        importer = OpenGNTImporter(
+            db_path, primary_variant=variant_mode, include_na28=(variant_mode == "na28")
+        )
         # Note: importers.py OpenGNTImporter.run_import takes (main_csv, morphology_csv)
         stats = importer.run_import(csv_path, morph_path)
         

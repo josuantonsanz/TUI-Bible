@@ -15,8 +15,10 @@ under `startup/`:
 - `latin_vulgate.json` (public-domain Vulgate);
 - `bibliaEsp.pk` (the *Biblia de Jerusalén*-derived Spanish source).
 
-NA28 variants, AGNT/BibleWorks material, PDFs, credentials, backups, and
-personal annotations are not distributed.
+AGNT/BibleWorks material, PDFs, credentials, backups, and personal annotations
+are not distributed. NA28 readings are derived from the variant field of the
+bundled OpenGNT CSV and are installed only by `--full-install` or
+`--include-na28`.
 
 The supported one-command local bootstrap is:
 
@@ -28,9 +30,10 @@ uv run opengnt-tui
 
 `setup` reads the bundled inputs, builds a temporary database before moving it
 into place, writes a local provenance manifest with checksums, and defaults to
-the OpenGNT reading with no NA28 variant rows. A plain `setup` installs the same
-bundled set, including the Spanish translation derived on the fly from
-`startup/bibliaEsp.pk`.
+the OpenGNT reading with no NA28 variant rows. A plain `setup` installs the
+bundled translations, including the Spanish translation derived on the fly from
+`startup/bibliaEsp.pk`. `--full-install` additionally builds the NA28 text from
+the OpenGNT variant field and makes it primary.
 
 ## Completed remediation
 
@@ -46,23 +49,24 @@ bundled set, including the Spanish translation derived on the fly from
   resolver and `OPENGNT_DATA_DIR` override.
 - [x] Repair the fresh-import schema mismatch for `fonetica`, `it_translation`,
   `lt_translation`, and `st_translation`.
-- [x] Correct tab-delimited CSV handling and make the default import omit NA28
-  variants.
+- [x] Correct tab-delimited CSV handling; a plain import omits NA28 variants
+  while `--full-install`/`--include-na28` installs and activates them.
 - [x] Remove the unmaintained `scripts/` tree, the legacy prompt-toolkit UI,
   AGNT inspection tools, destructive NA28 migration code, scraper diagnostics,
   and dictionary download tools that were not part of the supported path.
 - [x] Replace database-dependent tests with synthetic importer/CLI tests.
 - [x] Validate a full local import from the bundled inputs: 138,013 words, 27
-  books, zero NA28 variants, and a successful database verification.
+  books, 328 NA28 readings activated, and a successful database verification.
 
 ## Remaining blockers and follow-ups
 
 1. **Abbott-Smith digitisation terms.** Confirm Logeion's terms of use before
    relying on `abbotsmith.json` as a redistributed asset; otherwise move it back
    to a user-supplied input.
-2. **NA28 and other editions.** Design edition-aware storage before offering an
-   NA28 choice. The current schema must not mutate the base text or conflate
-   edition-specific readings with OpenGNT data.
+2. **NA28 and other editions.** NA28 readings are installed by `--full-install`
+   or `--include-na28` by swapping the main word and recording the OpenGNT
+   reading in `variants`. A fuller edition model (NA27, SBLGNT, THGNT, ...) that
+   stores editions as independent layers remains open.
 3. **Translation resources.** Replace fixed `spanish_text` and `latin_text`
    fields with resource/edition metadata and attribution records.
 4. **Stylometry.** The optional stylometry data is not part of the bundled set;

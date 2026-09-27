@@ -14,7 +14,9 @@ live in the per-user application-data directory and are ignored by Git.
 
 Bundling a file here is a deliberate distribution decision backed by the
 licence recorded below. It is not a statement that every possible input is
-redistributable: embedded NA28 variants remain outside the supported setup.
+redistributable: the NA28 readings are installed only when explicitly selected
+(`--full-install` or `--include-na28`) and remain the responsibility of the
+maintainer who enables them.
 
 ## Bundled assets
 
@@ -38,7 +40,7 @@ that.
 | Asset | Reason | Public repository handling |
 | --- | --- | --- |
 | `startup/spanish_bible.json` | Generated JSON derived from `startup/bibliaEsp.pk` during setup. | Ignored by Git; rebuilt in a temporary directory at install time. |
-| NA28 / NA28-preferred readings | Copyrighted critical edition. | Not installed by the supported setup; never bundle text, variants, or fixtures. |
+| NA28 / NA28-preferred readings | Copyrighted critical edition; read from the variant field of the bundled OpenGNT CSV. | Installed and activated only by `--full-install` or `--include-na28`; never bundled as separate text or fixtures. |
 | BibleWorks/AGNT material, personal PDFs, keys, notes | Personal or restricted research material. | Keep outside the repository. |
 | User-data `opengnt.db`, `provenance.json`, settings, backups, annotations | Locally created runtime state. | Never publish; written outside the checkout. |
 | `opengnt_interface/translations/en.json`, `es.json` | Project UI strings. | Covered by the project code licence. |

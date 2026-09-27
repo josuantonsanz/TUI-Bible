@@ -2,8 +2,9 @@
 
 The supported bootstrap is the `setup` command documented in the root
 [README](README.md) and [`startup/README.md`](startup/README.md). It creates a
-new local database from the bundled inputs, uses the OpenGNT reading, and omits
-embedded NA28 variants.
+new local database from the bundled inputs and uses the OpenGNT reading by
+default; `--full-install` or `--include-na28` also installs the embedded NA28
+readings.
 
 This document preserves the historical context only.
 
@@ -28,8 +29,9 @@ The working tree used these files, now tracked in `startup/`:
   unless explicitly asked.
 - The SQLAlchemy `Word` model now declares the four fields the importer writes:
   `fonetica`, `it_translation`, `lt_translation`, and `st_translation`.
-- The default importer/setup path excludes NA28 variant rows instead of
-  retaining them as an implicit side effect.
+- A plain import excludes NA28 variant rows instead of retaining them as an
+  implicit side effect; `--full-install`/`--include-na28` installs and activates
+  them explicitly.
 - The unmaintained `scripts/` collection, legacy prompt-toolkit TUI, and
   dictionary download utilities were removed. Their code was not imported by
   the supported CLI or Textual application; many tools used a root database,

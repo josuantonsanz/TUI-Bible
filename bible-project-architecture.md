@@ -21,12 +21,13 @@ The project is deliberately split into two boundaries:
   bundled data, plus settings, provenance metadata, backups, and user edits.
 
 This distinction is architectural, not merely an ignore rule. The bundled
-assets are documented, licensed, and tracked; anything whose provenance and
-terms have not been reviewed must not be downloaded or silently enabled. In
-particular, NA28 material, Biblia de Jerusalén (BJ) material, BibleWorks/AGNT
-material, personal research files, and all working databases remain outside the
-public repository. The application code is MIT-licensed; the bundled data keeps
-its own licences.
+assets are documented and tracked; anything whose provenance and terms have not
+been reviewed must not be downloaded or silently enabled. NA28 readings and the
+Biblia de Jerusalén (BJ) text are installed locally only when their setup
+options are selected, together with BibleWorks/AGNT material, personal research
+files, and all working databases. The application code is MIT-licensed; the
+bundled data keeps its own licences and each source is recorded in the
+provenance register.
 
 The provenance register in [`docs/data-provenance.md`](docs/data-provenance.md)
 and the operating policy in
@@ -247,11 +248,12 @@ from a local directory (default `startup/`) and never downloads data.
 | `abbotsmith.json` | copied to local dictionary path | bundled; default |
 | `bibliaEsp.pk` | `BibleTranslationImporter` (via `build_translation_json`) | `--include-bj`; bundled; default |
 
-The bundled resources are selected by default (`setup` and `setup
---full-install` are equivalent); individual `--include-*` flags remain for a
-granular install. Nothing is downloaded, and setup installs no NA28 variant
-rows. The Spanish translation is derived from the single bundled
-`startup/bibliaEsp.pk` pickle into a temporary directory while setup runs.
+The bundled resources are selected by default, except NA28. A plain `setup`
+installs the OpenGNT reading plus the translations; `setup --full-install` also
+installs the NA28 readings and makes them primary. Individual `--include-*`
+flags remain for a granular install. Nothing is downloaded. The Spanish
+translation is derived from the single bundled `startup/bibliaEsp.pk` pickle
+into a temporary directory while setup runs.
 
 ### 7.2 Transactional setup flow
 
@@ -277,8 +279,8 @@ An existing output is refused unless `--overwrite` is supplied. The temporary
 build protects the old database when an import fails. `provenance.json` is
 local metadata recording the selected input paths/checksums, setup time,
 whether the BJ translation was installed (`bj_installed`),
-`primary_variant: "opengnt"`, and that NA28 variants
-were not installed.
+the selected `primary_variant` (`"opengnt"` or `"na28"`), and whether NA28
+readings were installed (`na28_variants_installed`).
 
 ### 7.3 OpenGNT importer behaviour
 
@@ -296,13 +298,14 @@ Its defaults are intentionally:
 OpenGNTImporter(db_path, primary_variant="opengnt", include_na28=False)
 ```
 
-Consequently the base word remains the OpenGNT reading and no `variants` row
-is inserted, even when the input's variant-related field is populated. The
-supported `setup` and `import-data` command paths use this configuration;
-`import-data --variant-mode` rejects every value except `opengnt`. The importer
-still contains historical NA28-switching code behind `include_na28=True`, but
-that is not a supported public workflow and must not be exposed until an
-edition-aware design and rights decision exist.
+With these defaults the base word remains the OpenGNT reading and no `variants`
+row is inserted, even when the input's variant-related field is populated. A
+plain `setup` uses this configuration. `setup --full-install` and
+`setup --include-na28` instead use `primary_variant="na28", include_na28=True`,
+which replaces the main word with the NA28 reading for rows marked `＊` or `＝`,
+records the original OpenGNT reading in `variants`, and writes
+`primary_variant: "na28"` to the manifest. `import-data --variant-mode na28`
+does the same.
 
 The optional `BibleTranslationImporter` imports JSON verse maps through raw
 SQLite and upserts the corresponding Spanish and/or Latin column. The optional
@@ -351,8 +354,8 @@ translation and variants, then adds verse-level context. It also provides:
 `TranslationService` implements the three-level word-translation precedence
 shown above. `AnnotationService` combines a specific word's annotations with
 lemma-wide annotations and implements replacement semantics for editor
-screens. `VariantService` permits manually tracked variants, although the base
-bootstrap does not import NA28 rows. `ProjectService` validates project and
+screens. `VariantService` permits manually tracked variants and reads the
+OpenGNT/NA28 readings created by `--include-na28`. `ProjectService` validates project and
 book names before adding a range. `DictionaryService` loads a local JSON map
 and uses `AbbottSmithParser` to turn entry HTML/XML into styled Rich text.
 `ParallelPassageService` reads a local `parallels.json` when it exists and
@@ -503,9 +506,11 @@ The repository is an active work in progress. Important limitations are
 explicit rather than hidden:
 
 1. **Data rights follow-ups:** the Abbott-Smith digitisation terms still need
-   confirmation, and the external translation model (BJ) remains user-supplied.
-2. **Edition model:** the current schema cannot safely represent independent
-   editions or critical apparatus. NA28/NA29/USB6 support must wait for
+   confirmation. BJ and NA28 material are installed locally by the operator,
+   who is responsible for the rights to keep them.
+2. **Edition model:** NA28 is handled by swapping the main word and recording
+   the OpenGNT reading in `variants`. A fuller model for independent editions
+   (NA27, NA29, SBLGNT, THGNT, USB6, ...) or a critical apparatus still needs
    edition-aware, non-destructive storage with source, rights, attribution, and
    consent metadata.
 3. **Translations:** Spanish and Latin verse fields are fixed historical
