@@ -37,7 +37,7 @@ that.
 
 | Asset | Reason | Public repository handling |
 | --- | --- | --- |
-| `startup/spanish_bible.json` | *Biblia de Jerusalén*-derived Spanish text, copyrighted. | **Never commit.** Keep local-only; installed only via `--include-bj --acknowledge-local-data-rights`. |
+| `startup/spanish_bible.json` | *Biblia de Jerusalén*-derived Spanish text, copyrighted. | **Never commit.** Keep local-only; installed only via `--include-bj` plus a `Y/N` licence confirmation. |
 | NA28 / NA28-preferred readings | Copyrighted critical edition. | Not installed by the supported setup; never bundle text, variants, or fixtures. |
 | BibleWorks/AGNT material, personal PDFs, keys, notes | Personal or restricted research material. | Keep outside the repository. |
 | User-data `opengnt.db`, `provenance.json`, settings, backups, annotations | Locally created runtime state. | Never publish; written outside the checkout. |

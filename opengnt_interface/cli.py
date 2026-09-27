@@ -86,7 +86,6 @@ def setup(
     include_latin: bool = typer.Option(False, help="Install the bundled Latin translation JSON"),
     include_bj: bool = typer.Option(False, help="Install a local Biblia de Jerusalen JSON (restricted; not bundled)"),
     include_dictionary: bool = typer.Option(False, help="Install the bundled Abbott-Smith dictionary JSON"),
-    acknowledge_local_data_rights: bool = typer.Option(False, help="Confirm you are entitled to use resources outside the reviewed distribution"),
     overwrite: bool = typer.Option(False, help="Replace an existing output database"),
 ):
     """Build a local database from the bundled inputs.
@@ -95,8 +94,9 @@ def setup(
     resource (lemma glosses, Abbott-Smith dictionary, Latin translation) in one
     step.  It never downloads anything and deliberately omits embedded NA28
     variants.  The copyrighted Biblia de Jerusalen text is not bundled and is
-    installed only on request with --include-bj and a rights acknowledgement.
-    A provenance manifest is written next to the database.
+    installed only on request with --include-bj, which asks for a per-resource
+    licence confirmation.  A provenance manifest is written next to the
+    database.
     """
     input_dir = (input_dir or _default_input_dir()).expanduser()
 
@@ -111,9 +111,6 @@ def setup(
         include_latin = True
         include_dictionary = True
 
-    if include_bj and not acknowledge_local_data_rights:
-        console.print("[red]--include-bj requires --acknowledge-local-data-rights.[/red]")
-        raise typer.Exit(code=2)
     if not input_dir.is_dir():
         console.print(f"[red]Input directory not found: {input_dir}[/red]")
         raise typer.Exit(code=1)
@@ -168,7 +165,7 @@ def setup(
     manifest = {
         "created_at": datetime.now(timezone.utc).isoformat(),
         "database": str(output),
-        "acknowledged_local_data_rights": acknowledge_local_data_rights,
+        "bj_license_confirmed": include_bj,
         "primary_variant": "opengnt",
         "na28_variants_installed": False,
         "inputs": {label: {"path": str(path), "sha256": _sha256(path)} for label, path in selected_inputs.items()},

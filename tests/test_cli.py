@@ -27,11 +27,12 @@ def test_cli_help_lists_setup_command():
     assert "setup" in result.stdout
 
 
-def test_setup_help_documents_local_rights_acknowledgement():
+def test_setup_help_documents_restricted_bj_option():
     result = run_cli("setup", "--help")
     assert result.returncode == 0
     # Rich wraps long options to the current terminal width.
-    assert "acknowledge-local" in result.stdout
+    assert "include-bj" in result.stdout
+    assert "acknowledge-local" not in result.stdout
 
 
 def test_setup_help_documents_full_install():

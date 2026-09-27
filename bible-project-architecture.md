@@ -42,7 +42,7 @@ software architecture; it does not establish rights to any input or output.
 | Textual TUI | `uv run opengnt-tui` | The only supported terminal UI for study and local editing. |
 | CLI | `uv run opengnt --help` | Database setup, inspection, search, exports, verification, and backup commands. |
 | One-command install | `uv run opengnt setup --full-install` | Builds a complete local database from the bundled inputs in `startup/`. |
-| Restricted opt-in | `uv run opengnt setup --include-bj --acknowledge-local-data-rights` | Installs a user-supplied BJ text that is not bundled. |
+| Restricted opt-in | `uv run opengnt setup --include-bj` | Installs a user-supplied BJ text that is not bundled, after a `Y/N` licence prompt. |
 | Tests | `uv run pytest -q` | Runs synthetic, data-free tests. |
 
 The former prompt-toolkit UI (`opengnt_interface/tui.py`), the CLI command
@@ -86,6 +86,8 @@ or open an empty database in the source checkout.
 │   ├── translations/en.json, es.json # UI messages
 │   └── data/parallels.json            # approved parallel-passage references
 ├── examples/                         # executable, database-mutating service examples
+├── scripts/
+│   └── build_translation_json.py     # converts a user-supplied source to translation JSON
 ├── tests/                            # synthetic pytest/unittest coverage
 ├── stylometry-documentation.md       # stylometry model and visual semantics
 ├── TODO.md                           # unfinished product work
@@ -250,16 +252,16 @@ The bundled resources are selected by default (`setup` and `setup
 --full-install` are equivalent); individual `--include-*` flags remain for a
 granular install. Because the bundled assets have already been reviewed and
 recorded in the provenance register, they need no consent step. The only
-resource that requires a command-level `--acknowledge-local-data-rights` flag
-and an interactive, default-no `Y/N` confirmation is the restricted
-Biblia de Jerusalén text, which the user must supply locally. This is intended
-to make restricted resource selection explicit, not to turn the application
-into an acquisition mechanism.
+resource that requires confirmation is the restricted Biblia de Jerusalén text,
+which the user must supply locally; `--include-bj` asks a default-no `Y/N`
+licence question and aborts before writing a database if the answer is `N`.
+This is intended to make restricted resource selection explicit, not to turn
+the application into an acquisition mechanism.
 
 ### 7.2 Transactional setup flow
 
 ```text
-validate acknowledgement and input paths
+validate input paths
         ↓
 validate every selected optional file and collect it for the manifest
         ↓
@@ -281,7 +283,8 @@ write neighbouring provenance.json with paths, SHA-256 hashes, flags, and time
 An existing output is refused unless `--overwrite` is supplied. The temporary
 build protects the old database when an import fails. `provenance.json` is
 local metadata recording the selected input paths/checksums, setup time,
-rights acknowledgement, `primary_variant: "opengnt"`, and that NA28 variants
+rights confirmation for the one restricted resource (if selected),
+`primary_variant: "opengnt"`, and that NA28 variants
 were not installed.
 
 ### 7.3 OpenGNT importer behaviour
@@ -422,9 +425,9 @@ The TUI checks for the database in its module entry block before creating
 `OpenGNTApp`. It therefore emits an actionable message on a clean clone:
 
 ```text
-No local database is installed. Run uv run python -m opengnt_interface.cli
-setup --acknowledge-local-data-rights after placing authorised inputs in
-startup/.
+No local database is installed. Run opengnt setup --full-install (or
+uv run opengnt setup --full-install from a checkout) to build one from the
+bundled startup data.
 ```
 
 ## 10. CLI
@@ -539,8 +542,8 @@ explicit rather than hidden:
 - Extend `models.py` and fresh-import tests together whenever importer columns
   change. Add a migration strategy before claiming compatibility with existing
   databases.
-- Preserve the safe setup boundary: local files only, acknowledgement,
-  explicit optional selection, per-resource confirmation, atomic database
+- Preserve the safe setup boundary: local files only, explicit optional
+  selection, per-resource confirmation for restricted content, atomic database
   construction, and local provenance recording.
 - Do not reintroduce a downloader, scraper, hidden acquisition path, or
   destructive edition switch for unreviewed content.

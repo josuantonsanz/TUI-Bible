@@ -33,12 +33,15 @@ different database path, `--input-dir` a different source directory, and
 who owns a lawful copy may place it in `startup/` and install it explicitly:
 
 ```powershell
-uv run opengnt setup --include-bj --acknowledge-local-data-rights
+uv run python scripts/build_translation_json.py --input <your-source> --output startup/spanish_bible.json
+uv run opengnt setup --include-bj
 ```
 
-The command requires the acknowledgement flag and then asks a separate
-interactive `Y/N` question. Answering `N` cancels setup before any database is
-written.
+The command asks a default-no `Y/N` licence question. Answering `N` cancels
+setup before any database is written. `build_translation_json.py` is a
+code-only converter for a source *you* supply: it downloads nothing, and no
+translation is distributed. Do not add the resulting JSON or the source file to
+Git.
 
 ## NA28 boundary
 

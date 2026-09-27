@@ -44,13 +44,15 @@ Set `OPENGNT_DATA_DIR` to choose another directory. The command creates
 | `opengnt setup --include-lemma-glosses` | Bundled Spanish lemma glosses only. |
 | `opengnt setup --include-dictionary` | Bundled Abbott-Smith dictionary only. |
 | `opengnt setup --include-latin` | Bundled Latin translation only. |
-| `opengnt setup --include-bj --acknowledge-local-data-rights` | Install a **local** Biblia de Jerusalén JSON that you own (not bundled). |
+| `opengnt setup --include-bj` | Install a **local** Biblia de Jerusalén JSON that you own (not bundled); asks for a licence confirmation. |
 | `opengnt setup --output <path>` | Write the database to a specific file. |
 | `opengnt setup --overwrite` | Replace an existing database. |
 
-`--include-bj` is the only resource that needs a rights acknowledgement and an
-interactive confirmation. The file is copyrighted and is not distributed here.
-See [restricted-content policy](docs/restricted-content-setup.md).
+`--include-bj` asks a single interactive `Y/N` licence question; answering `N`
+cancels setup before any database is written. The file is copyrighted and is
+not distributed here. If you have a source you are entitled to use, build the
+expected JSON locally with [`scripts/build_translation_json.py`](scripts/build_translation_json.py)
+(see [restricted-content policy](docs/restricted-content-setup.md)).
 
 ## Development checks
 

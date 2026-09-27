@@ -31,11 +31,14 @@ by default. Set `OPENGNT_DATA_DIR` to choose another local data directory.
 ## Restricted material (not bundled)
 
 `spanish_bible.json` is a *Biblia de Jerusalén*-derived Spanish text. It is
-copyrighted, is **not** redistributed here, and is ignored by Git. If you own a
-lawful copy you can place it in this directory and install it explicitly:
+copyrighted, is **not** redistributed here, and is ignored by Git. If you have
+lawful access to a source, build the expected JSON locally with
+`scripts/build_translation_json.py` and install it:
 
 ```powershell
-uv run opengnt setup --include-bj --acknowledge-local-data-rights
+uv run python scripts/build_translation_json.py --input <your-source> --output startup/spanish_bible.json
+uv run opengnt setup --include-bj
 ```
 
-See [`docs/restricted-content-setup.md`](../docs/restricted-content-setup.md).
+`--include-bj` asks a default-no `Y/N` licence question. See
+[`docs/restricted-content-setup.md`](../docs/restricted-content-setup.md).

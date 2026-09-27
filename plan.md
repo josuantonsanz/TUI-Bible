@@ -30,8 +30,8 @@ uv run opengnt-tui
 `setup` reads the bundled inputs, builds a temporary database before moving it
 into place, writes a local provenance manifest with checksums, and defaults to
 the OpenGNT reading with no NA28 variant rows. A plain `setup` installs the same
-bundled set. The restricted `--include-bj` path still requires
-`--acknowledge-local-data-rights` and an interactive `Y/N` confirmation.
+bundled set. The restricted `--include-bj` path asks a default-no `Y/N` licence
+question before it writes anything.
 
 ## Completed remediation
 
