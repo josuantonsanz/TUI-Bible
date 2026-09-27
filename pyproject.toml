@@ -1,0 +1,60 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "opengnt-interface"
+version = "0.1.0"
+description = "A keyboard-driven terminal application for studying and annotating the Greek New Testament."
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [
+    { name = "Josu Antón Sanz", email = "josuantonsanz@gmail.com" },
+]
+keywords = [
+    "bible",
+    "greek",
+    "new-testament",
+    "opengnt",
+    "interlinear",
+    "concordance",
+    "textual",
+    "tui",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Religion",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Religion",
+    "Topic :: Text Processing :: Linguistic",
+]
+dependencies = [
+    "beautifulsoup4>=4.12.2",
+    "rich>=14.1.0",
+    "sqlalchemy>=2.0.43",
+    "textual>=0.85.0",
+    "typer>=0.9.0",
+]
+
+[project.scripts]
+opengnt = "opengnt_interface.cli:app"
+opengnt-tui = "opengnt_interface.tui_textual:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["opengnt_interface"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

@@ -1,0 +1,3382 @@
+[
+  {
+    "id": 1,
+    "section": "",
+    "title": "Prologue",
+    "references": {
+      "Matthew": "1:1",
+      "Mark": "1:1",
+      "Luke": "1:1-4",
+      "John": "1:1-18"
+    }
+  },
+  {
+    "id": 2,
+    "section": "",
+    "title": "The Promise of the Birth of John the Baptist",
+    "references": {
+      "Luke": "1:5-25"
+    }
+  },
+  {
+    "id": 3,
+    "section": "",
+    "title": "The Annunciation",
+    "references": {
+      "Luke": "1:26-38"
+    }
+  },
+  {
+    "id": 4,
+    "section": "",
+    "title": "Mary's Visit to Elizabeth",
+    "references": {
+      "Luke": "1:39-56"
+    }
+  },
+  {
+    "id": 5,
+    "section": "",
+    "title": "The Birth of John the Baptist",
+    "references": {
+      "Luke": "1:57-80"
+    }
+  },
+  {
+    "id": 6,
+    "section": "",
+    "title": "The Genealogy of Jesus",
+    "references": {
+      "Matthew": "1:2-17",
+      "Luke": "3:23-38"
+    }
+  },
+  {
+    "id": 7,
+    "section": "",
+    "title": "The Birth of Jesus",
+    "references": {
+      "Matthew": "1:18-25",
+      "Luke": "2:1-7"
+    }
+  },
+  {
+    "id": 8,
+    "section": "",
+    "title": "The Adoration of the Infant Jesus",
+    "references": {
+      "Matthew": "2:1-12",
+      "Luke": "2:8-20"
+    }
+  },
+  {
+    "id": 9,
+    "section": "",
+    "title": "The Circumcision and Presentation in the Temple",
+    "references": {
+      "Luke": "2:21-38"
+    }
+  },
+  {
+    "id": 10,
+    "section": "",
+    "title": "The Flight into Egypt and Return",
+    "references": {
+      "Matthew": "2:13-21"
+    }
+  },
+  {
+    "id": 11,
+    "section": "",
+    "title": "The Childhood of Jesus at Nazareth",
+    "references": {
+      "Matthew": "2:22-23",
+      "Luke": "2:39-40"
+    }
+  },
+  {
+    "id": 12,
+    "section": "",
+    "title": "The Boy Jesus in the Temple",
+    "references": {
+      "Luke": "2:41-52"
+    }
+  },
+  {
+    "id": 13,
+    "section": "",
+    "title": "John the Baptist",
+    "references": {
+      "Matthew": "3:1-6",
+      "Mark": "1:2-6",
+      "Luke": "3:1-6",
+      "John": "1:19-23"
+    }
+  },
+  {
+    "id": 14,
+    "section": "",
+    "title": "John's Preaching of Repentance",
+    "references": {
+      "Matthew": "3:7-10",
+      "Luke": "3:7-9"
+    }
+  },
+  {
+    "id": 15,
+    "section": "",
+    "title": "John Replies to Questioners",
+    "references": {
+      "Luke": "3:10-14"
+    }
+  },
+  {
+    "id": 16,
+    "section": "",
+    "title": "John's Messianic Preaching",
+    "references": {
+      "Matthew": "3:11-12",
+      "Mark": "1:7-8",
+      "Luke": "3:15-18",
+      "John": "1:24-28"
+    }
+  },
+  {
+    "id": 17,
+    "section": "",
+    "title": "The Imprisonment of John",
+    "references": {
+      "Matthew": "14:3-4",
+      "Mark": "6:17-18",
+      "Luke": "3:19-20"
+    }
+  },
+  {
+    "id": 18,
+    "section": "",
+    "title": "The Baptism of Jesus",
+    "references": {
+      "Matthew": "3:13-17",
+      "Mark": "1:9-11",
+      "Luke": "3:21-22",
+      "John": "1:29-34"
+    }
+  },
+  {
+    "id": 19,
+    "section": "",
+    "title": "The Genealogy of Jesus",
+    "references": {
+      "Matthew": "1:1-17",
+      "Luke": "3:23-38"
+    }
+  },
+  {
+    "id": 20,
+    "section": "",
+    "title": "The Temptation",
+    "references": {
+      "Matthew": "4:1-11",
+      "Mark": "1:12-13",
+      "Luke": "4:1-13"
+    }
+  },
+  {
+    "id": 21,
+    "section": "",
+    "title": "The Call of the First Disciples",
+    "references": {
+      "John": "1:35-51"
+    }
+  },
+  {
+    "id": 22,
+    "section": "",
+    "title": "The Marriage at Cana",
+    "references": {
+      "John": "2:1-11"
+    }
+  },
+  {
+    "id": 23,
+    "section": "",
+    "title": "The Sojourn at Capernaum",
+    "references": {
+      "John": "2:12"
+    }
+  },
+  {
+    "id": 24,
+    "section": "",
+    "title": "The First Journey to Jerusalem",
+    "references": {
+      "John": "2:13"
+    }
+  },
+  {
+    "id": 25,
+    "section": "",
+    "title": "The Cleansing of the Temple",
+    "references": {
+      "Matthew": "21:12-13",
+      "Mark": "11:15-17",
+      "Luke": "19:45-46",
+      "John": "2:14-22"
+    }
+  },
+  {
+    "id": 26,
+    "section": "",
+    "title": "Jesus' Ministry in Jerusalem",
+    "references": {
+      "John": "2:23-25"
+    }
+  },
+  {
+    "id": 27,
+    "section": "",
+    "title": "The Discourse with Nicodemus",
+    "references": {
+      "John": "3:1-21"
+    }
+  },
+  {
+    "id": 28,
+    "section": "",
+    "title": "Jesus' Ministry in Judea",
+    "references": {
+      "John": "3:22"
+    }
+  },
+  {
+    "id": 29,
+    "section": "",
+    "title": "John's Testimony to Christ",
+    "references": {
+      "John": "3:23-36"
+    }
+  },
+  {
+    "id": 30,
+    "section": "",
+    "title": "The Journey into Galilee",
+    "references": {
+      "Matthew": "4:12",
+      "Mark": "1:14a",
+      "Luke": "4:14a",
+      "John": "4:1-3"
+    }
+  },
+  {
+    "id": 31,
+    "section": "",
+    "title": "The Discourse with the Woman of Samaria",
+    "references": {
+      "John": "4:4-42"
+    }
+  },
+  {
+    "id": 32,
+    "section": "",
+    "title": "Ministry in Galilee",
+    "references": {
+      "Matthew": "4:13-17",
+      "Mark": "1:14b-15",
+      "Luke": "4:14b-15",
+      "John": "4:43-46a"
+    }
+  },
+  {
+    "id": 33,
+    "section": "",
+    "title": "Jesus' Preaching at Nazareth",
+    "references": {
+      "Matthew": "13:53-58",
+      "Mark": "6:1-6a",
+      "Luke": "4:16-30"
+    }
+  },
+  {
+    "id": 34,
+    "section": "",
+    "title": "The Call of the Disciples",
+    "references": {
+      "Matthew": "4:18-22",
+      "Mark": "1:16-20"
+    }
+  },
+  {
+    "id": 35,
+    "section": "",
+    "title": "Teaching in the Synagogue at Capernaum",
+    "references": {
+      "Mark": "1:21-22",
+      "Luke": "4:31-32"
+    }
+  },
+  {
+    "id": 36,
+    "section": "",
+    "title": "The Healing of the Demoniac in the Synagogue",
+    "references": {
+      "Mark": "1:23-28",
+      "Luke": "4:33-37"
+    }
+  },
+  {
+    "id": 37,
+    "section": "",
+    "title": "The Healing of Peter's Mother-in-law",
+    "references": {
+      "Matthew": "8:14-15",
+      "Mark": "1:29-31",
+      "Luke": "4:38-39"
+    }
+  },
+  {
+    "id": 38,
+    "section": "",
+    "title": "The Sick Healed at Evening",
+    "references": {
+      "Matthew": "8:16-17",
+      "Mark": "1:32-34",
+      "Luke": "4:40-41"
+    }
+  },
+  {
+    "id": 39,
+    "section": "",
+    "title": "Jesus Departs from Capernaurn",
+    "references": {
+      "Mark": "1:35-38",
+      "Luke": "4:42-43"
+    }
+  },
+  {
+    "id": 40,
+    "section": "",
+    "title": "First Preaching Tour in Galilee",
+    "references": {
+      "Matthew": "4:23",
+      "Mark": "1:39",
+      "Luke": "4:44"
+    }
+  },
+  {
+    "id": 41,
+    "section": "",
+    "title": "The Miraculous Draught of Fish",
+    "references": {
+      "Luke": "5:1-11"
+    }
+  },
+  {
+    "id": 42,
+    "section": "",
+    "title": "The Cleansing of the Leper",
+    "references": {
+      "Matthew": "8:1-4",
+      "Mark": "1:40-45",
+      "Luke": "5:12-16"
+    }
+  },
+  {
+    "id": 43,
+    "section": "",
+    "title": "The Healing of the Paralytic",
+    "references": {
+      "Matthew": "9:1-8",
+      "Mark": "2:1-12",
+      "Luke": "5:17-26",
+      "John": "5:8-9a"
+    }
+  },
+  {
+    "id": 44,
+    "section": "",
+    "title": "The Call of Levi (Matthew)",
+    "references": {
+      "Matthew": "9:9-13",
+      "Mark": "2:13-17",
+      "Luke": "5:27-32"
+    }
+  },
+  {
+    "id": 45,
+    "section": "",
+    "title": "The Question about Fasting",
+    "references": {
+      "Matthew": "9:14-17",
+      "Mark": "2:18-22",
+      "Luke": "5:33-39"
+    }
+  },
+  {
+    "id": 46,
+    "section": "",
+    "title": "Plucking Grain on the Sabbath",
+    "references": {
+      "Matthew": "12:1-8",
+      "Mark": "2:23-28",
+      "Luke": "6:1-5"
+    }
+  },
+  {
+    "id": 47,
+    "section": "",
+    "title": "The Man with the Withered Hand",
+    "references": {
+      "Matthew": "12:9-14",
+      "Mark": "3:1-6",
+      "Luke": "6:6-11"
+    }
+  },
+  {
+    "id": 48,
+    "section": "",
+    "title": "Jesus Heals Multitudes by the Sea",
+    "references": {
+      "Matthew": "4:24-2512:15-16",
+      "Mark": "3:7-12",
+      "Luke": "6:17-19"
+    }
+  },
+  {
+    "id": 49,
+    "section": "",
+    "title": "The Choosing of the Twelve",
+    "references": {
+      "Matthew": "10:1-4",
+      "Mark": "3:13-19",
+      "Luke": "6:12-16"
+    }
+  },
+  {
+    "id": 50,
+    "section": "",
+    "title": "Occasion of the Sermon",
+    "references": {
+      "Matthew": "4:24-5:2",
+      "Mark": "3:7-13 a",
+      "Luke": "6:17-20a"
+    }
+  },
+  {
+    "id": 51,
+    "section": "",
+    "title": "The Beatitudes",
+    "references": {
+      "Matthew": "5:3-12",
+      "Luke": "6:20b-23"
+    }
+  },
+  {
+    "id": 52,
+    "section": "",
+    "title": "The Salt of the Earth",
+    "references": {
+      "Matthew": "5:13",
+      "Mark": "9:49-50",
+      "Luke": "14:34-35"
+    }
+  },
+  {
+    "id": 53,
+    "section": "",
+    "title": "The Light of the World",
+    "references": {
+      "Matthew": "5:14-16",
+      "Mark": "4:21",
+      "Luke": "8:16"
+    }
+  },
+  {
+    "id": 54,
+    "section": "",
+    "title": "On the Law and the Prophets",
+    "references": {
+      "Matthew": "5:17-20",
+      "Luke": "16:16-17"
+    }
+  },
+  {
+    "id": 55,
+    "section": "",
+    "title": "On Murder and Wrath",
+    "references": {
+      "Matthew": "5:21-26",
+      "Luke": "12:57-59"
+    }
+  },
+  {
+    "id": 56,
+    "section": "",
+    "title": "On Adultery and Divorce",
+    "references": {
+      "Matthew": "5:27-32",
+      "Mark": "9:43-48",
+      "Luke": "16:18"
+    }
+  },
+  {
+    "id": 57,
+    "section": "",
+    "title": "On Oaths",
+    "references": {
+      "Matthew": "5:33-37"
+    }
+  },
+  {
+    "id": 58,
+    "section": "",
+    "title": "On Retaliation",
+    "references": {
+      "Matthew": "5:38-42",
+      "Luke": "6:29-30"
+    }
+  },
+  {
+    "id": 59,
+    "section": "",
+    "title": "On Love of One's Enemies",
+    "references": {
+      "Matthew": "5:43-48",
+      "Luke": "6:27-286:32-36"
+    }
+  },
+  {
+    "id": 60,
+    "section": "",
+    "title": "On Almsgiving",
+    "references": {
+      "Matthew": "6:1-4"
+    }
+  },
+  {
+    "id": 61,
+    "section": "",
+    "title": "On Prayer",
+    "references": {
+      "Matthew": "6:5-6"
+    }
+  },
+  {
+    "id": 62,
+    "section": "",
+    "title": "The Lord's Prayer",
+    "references": {
+      "Matthew": "6:7-15",
+      "Mark": "11:25",
+      "Luke": "11:1-4"
+    }
+  },
+  {
+    "id": 63,
+    "section": "",
+    "title": "On Fasting",
+    "references": {
+      "Matthew": "6:16-18"
+    }
+  },
+  {
+    "id": 64,
+    "section": "",
+    "title": "On Treasures",
+    "references": {
+      "Matthew": "6:19-21",
+      "Luke": "12:33-34"
+    }
+  },
+  {
+    "id": 65,
+    "section": "",
+    "title": "The Sound Eye",
+    "references": {
+      "Matthew": "6:22-23",
+      "Luke": "11:34-36"
+    }
+  },
+  {
+    "id": 66,
+    "section": "",
+    "title": "On Serving Two Masters",
+    "references": {
+      "Matthew": "6:24",
+      "Luke": "16:13"
+    }
+  },
+  {
+    "id": 67,
+    "section": "",
+    "title": "On Anxiety",
+    "references": {
+      "Matthew": "6:25-34",
+      "Luke": "12:22-32"
+    }
+  },
+  {
+    "id": 68,
+    "section": "",
+    "title": "On Judging",
+    "references": {
+      "Matthew": "7:1-5",
+      "Mark": "4:24-25",
+      "Luke": "6:37-42"
+    }
+  },
+  {
+    "id": 69,
+    "section": "",
+    "title": "On Profaning the Holy",
+    "references": {
+      "Matthew": "7:6"
+    }
+  },
+  {
+    "id": 70,
+    "section": "",
+    "title": "God's Answering of Prayer",
+    "references": {
+      "Matthew": "7:7-11",
+      "Luke": "11:9-13"
+    }
+  },
+  {
+    "id": 71,
+    "section": "",
+    "title": "The Golden Rule",
+    "references": {
+      "Matthew": "7:12",
+      "Luke": "6:31"
+    }
+  },
+  {
+    "id": 72,
+    "section": "",
+    "title": "The Two Ways",
+    "references": {
+      "Matthew": "7:13-14",
+      "Luke": "13:23-24"
+    }
+  },
+  {
+    "id": 73,
+    "section": "",
+    "title": "\"By their Fruits\"",
+    "references": {
+      "Matthew": "7:15-2012:33-35",
+      "Luke": "6:43-45"
+    }
+  },
+  {
+    "id": 74,
+    "section": "",
+    "title": "\"Saying Lord, Lord\"",
+    "references": {
+      "Matthew": "7:21-23",
+      "Luke": "6:4613:25-27"
+    }
+  },
+  {
+    "id": 75,
+    "section": "",
+    "title": "The House Built upon the Rock",
+    "references": {
+      "Matthew": "7:24-27",
+      "Luke": "6:47-49"
+    }
+  },
+  {
+    "id": 76,
+    "section": "",
+    "title": "The Effect of the Sermon",
+    "references": {
+      "Matthew": "7:28-29",
+      "Mark": "1:21-22"
+    }
+  },
+  {
+    "id": 77,
+    "section": "",
+    "title": "Occasion of the Sermon",
+    "references": {
+      "Matthew": "4:24-5:2",
+      "Mark": "3:7-13a",
+      "Luke": "6:17-20a"
+    }
+  },
+  {
+    "id": 78,
+    "section": "",
+    "title": "The Beatitudes",
+    "references": {
+      "Matthew": "5:3-12",
+      "Luke": "6:20b-23"
+    }
+  },
+  {
+    "id": 79,
+    "section": "",
+    "title": "The Woes",
+    "references": {
+      "Luke": "6:24-26"
+    }
+  },
+  {
+    "id": 80,
+    "section": "",
+    "title": "On Love of One's Enemies",
+    "references": {
+      "Matthew": "5:38-48",
+      "Luke": "6:27-36"
+    }
+  },
+  {
+    "id": 81,
+    "section": "",
+    "title": "On Judging",
+    "references": {
+      "Matthew": "7:1-5",
+      "Mark": "4:24-25",
+      "Luke": "6:37-42"
+    }
+  },
+  {
+    "id": 82,
+    "section": "",
+    "title": "\"By their Fruits\"",
+    "references": {
+      "Matthew": "7:15-2012:33-35",
+      "Luke": "6:43-45"
+    }
+  },
+  {
+    "id": 83,
+    "section": "",
+    "title": "The House Built upon the Rock",
+    "references": {
+      "Matthew": "7:21-27",
+      "Luke": "6:46-49"
+    }
+  },
+  {
+    "id": 84,
+    "section": "",
+    "title": "Cleansing of the Leper",
+    "references": {
+      "Matthew": "8:1-4",
+      "Mark": "1:40-45",
+      "Luke": "5:12-16"
+    }
+  },
+  {
+    "id": 85,
+    "section": "",
+    "title": "The Centurion of Capernaum",
+    "references": {
+      "Matthew": "8:5-13",
+      "Mark": "7:30",
+      "Luke": "7:1-1013:28-29",
+      "John": "4:46b-54"
+    }
+  },
+  {
+    "id": 86,
+    "section": "",
+    "title": "The Widow's Son at Nain",
+    "references": {
+      "Luke": "7:11-17"
+    }
+  },
+  {
+    "id": 87,
+    "section": "",
+    "title": "The Healing of Peter's Mother-in-law",
+    "references": {
+      "Matthew": "8:14-15",
+      "Mark": "1:29-31",
+      "Luke": "4:38-39"
+    }
+  },
+  {
+    "id": 88,
+    "section": "",
+    "title": "The Sick Healed at Evening",
+    "references": {
+      "Matthew": "8:16-17",
+      "Mark": "1:32-34",
+      "Luke": "4:40-41"
+    }
+  },
+  {
+    "id": 89,
+    "section": "",
+    "title": "On Following Jesus",
+    "references": {
+      "Matthew": "8:18-22",
+      "Luke": "9:57-62"
+    }
+  },
+  {
+    "id": 90,
+    "section": "",
+    "title": "Stilling the Storm",
+    "references": {
+      "Matthew": "8:23-27",
+      "Mark": "4:35-41",
+      "Luke": "8:22-25"
+    }
+  },
+  {
+    "id": 91,
+    "section": "",
+    "title": "The Gadarene Demoniacs",
+    "references": {
+      "Matthew": "8:28-34",
+      "Mark": "5:1-20",
+      "Luke": "8:26-39"
+    }
+  },
+  {
+    "id": 92,
+    "section": "",
+    "title": "The Healing of the Paralytic",
+    "references": {
+      "Matthew": "9:1-8",
+      "Mark": "2:1-12",
+      "Luke": "5:17-26",
+      "John": "5:8-9a"
+    }
+  },
+  {
+    "id": 93,
+    "section": "",
+    "title": "The Call of Levi (Matthew)",
+    "references": {
+      "Matthew": "9:9-13",
+      "Mark": "2:13-17",
+      "Luke": "5:27-32"
+    }
+  },
+  {
+    "id": 94,
+    "section": "",
+    "title": "The Question about Fasting",
+    "references": {
+      "Matthew": "9:14-17",
+      "Mark": "2:18-22",
+      "Luke": "5:33-39"
+    }
+  },
+  {
+    "id": 95,
+    "section": "",
+    "title": "Jairus' Daughter and the Woman with a Hemorrhage",
+    "references": {
+      "Matthew": "9:18-26",
+      "Mark": "5:21-43",
+      "Luke": "8:40-56"
+    }
+  },
+  {
+    "id": 96,
+    "section": "",
+    "title": "Two Blind Men",
+    "references": {
+      "Matthew": "9:27-3120:29-34",
+      "Mark": "10:46-52",
+      "Luke": "18:35-43"
+    }
+  },
+  {
+    "id": 97,
+    "section": "",
+    "title": "The Dumb Demoniac",
+    "references": {
+      "Matthew": "9:32-3412:22-24",
+      "Mark": "3:22",
+      "Luke": "11:14-15"
+    }
+  },
+  {
+    "id": 98,
+    "section": "",
+    "title": "The Harvest is Great",
+    "references": {
+      "Matthew": "9:35-38",
+      "Mark": "6:6b6:34",
+      "Luke": "8:110:2"
+    }
+  },
+  {
+    "id": 99,
+    "section": "",
+    "title": "Commissioning the Twelve",
+    "references": {
+      "Matthew": "10:1-16",
+      "Mark": "6:73:13-196:8-11",
+      "Luke": "9:16:12-169:2-510:3"
+    }
+  },
+  {
+    "id": 100,
+    "section": "",
+    "title": "The Fate of the Disciples",
+    "references": {
+      "Matthew": "10:17-2524:9-14",
+      "Mark": "13:9-13",
+      "Luke": "12:11-126:4021:12-19",
+      "John": "13:16"
+    }
+  },
+  {
+    "id": 101,
+    "section": "",
+    "title": "Exhortation to Fearless Confession",
+    "references": {
+      "Matthew": "10:26-33",
+      "Luke": "12:2-9"
+    }
+  },
+  {
+    "id": 102,
+    "section": "",
+    "title": "Divisions within Households",
+    "references": {
+      "Matthew": "10:34-36",
+      "Luke": "12:51-53"
+    }
+  },
+  {
+    "id": 103,
+    "section": "",
+    "title": "Conditions of Discipleship",
+    "references": {
+      "Matthew": "10:37-39",
+      "Luke": "14:25-2717:33",
+      "John": "12:25"
+    }
+  },
+  {
+    "id": 104,
+    "section": "",
+    "title": "Rewards of Discipleship",
+    "references": {
+      "Matthew": "10:40-42",
+      "Mark": "9:41",
+      "Luke": "10:16",
+      "John": "13:20"
+    }
+  },
+  {
+    "id": 105,
+    "section": "",
+    "title": "Continuation of Journey",
+    "references": {
+      "Matthew": "11:1"
+    }
+  },
+  {
+    "id": 106,
+    "section": "",
+    "title": "John the Baptist's Question and Jesus' Answer",
+    "references": {
+      "Matthew": "11:2-6",
+      "Luke": "7:18-23"
+    }
+  },
+  {
+    "id": 107,
+    "section": "",
+    "title": "Jesus' Witness concerning John",
+    "references": {
+      "Matthew": "11:7-19",
+      "Luke": "7:24-3516:16"
+    }
+  },
+  {
+    "id": 108,
+    "section": "",
+    "title": "Woes Pronounced on Galilean Cities",
+    "references": {
+      "Matthew": "11:20-24",
+      "Luke": "10:12-15"
+    }
+  },
+  {
+    "id": 109,
+    "section": "",
+    "title": "Jesus' Thanksgiving to the Father",
+    "references": {
+      "Matthew": "11:25-27",
+      "Luke": "10:21-22"
+    }
+  },
+  {
+    "id": 110,
+    "section": "",
+    "title": "\"Come unto Me\"",
+    "references": {
+      "Matthew": "11:28-30"
+    }
+  },
+  {
+    "id": 111,
+    "section": "",
+    "title": "Plucking Grain on the Sabbath",
+    "references": {
+      "Matthew": "12:1-8",
+      "Mark": "2:23-28",
+      "Luke": "6:1-5"
+    }
+  },
+  {
+    "id": 112,
+    "section": "",
+    "title": "Healing the Withered Hand",
+    "references": {
+      "Matthew": "12:9-14",
+      "Mark": "3:1-6",
+      "Luke": "6:6-11"
+    }
+  },
+  {
+    "id": 113,
+    "section": "",
+    "title": "Jesus Heals Multitudes by the Sea",
+    "references": {
+      "Matthew": "12:15-21",
+      "Mark": "3:7-12",
+      "Luke": "6:17-19"
+    }
+  },
+  {
+    "id": 114,
+    "section": "",
+    "title": "The Woman with the Ointment",
+    "references": {
+      "Matthew": "26:6-13",
+      "Mark": "14:3-9",
+      "Luke": "7:36-50",
+      "John": "12:1-8"
+    }
+  },
+  {
+    "id": 115,
+    "section": "",
+    "title": "The Ministering Women",
+    "references": {
+      "Luke": "8:1-3"
+    }
+  },
+  {
+    "id": 116,
+    "section": "",
+    "title": "Jesus is Thought to be Beside Himself",
+    "references": {
+      "Mark": "3:20-21"
+    }
+  },
+  {
+    "id": 117,
+    "section": "",
+    "title": "On Collusion with Satan",
+    "references": {
+      "Matthew": "12:22-309:32-34",
+      "Mark": "3:22-27",
+      "Luke": "11:14-1511:17-23"
+    }
+  },
+  {
+    "id": 118,
+    "section": "",
+    "title": "The Sin against the Holy Spirit",
+    "references": {
+      "Matthew": "12:31-377:16-20",
+      "Mark": "3:28-30",
+      "Luke": "12:106:43-45"
+    }
+  },
+  {
+    "id": 119,
+    "section": "",
+    "title": "The Sign of Jonah",
+    "references": {
+      "Matthew": "12:38-4216:1-2a,4",
+      "Mark": "8:11-12",
+      "Luke": "11:1611:29-32"
+    }
+  },
+  {
+    "id": 120,
+    "section": "",
+    "title": "The Return of the Evil Spirit",
+    "references": {
+      "Matthew": "12:43-45",
+      "Luke": "11:24-26"
+    }
+  },
+  {
+    "id": 121,
+    "section": "",
+    "title": "Jesus' True Kindred",
+    "references": {
+      "Matthew": "12:46-50",
+      "Mark": "3:31-35",
+      "Luke": "8:19-21",
+      "John": "15:14"
+    }
+  },
+  {
+    "id": 122,
+    "section": "",
+    "title": "The Parable of the Sower",
+    "references": {
+      "Matthew": "13:1-9",
+      "Mark": "4:1-9",
+      "Luke": "8:4-8"
+    }
+  },
+  {
+    "id": 123,
+    "section": "",
+    "title": "The Reason for Speaking in Parables",
+    "references": {
+      "Matthew": "13:10-17",
+      "Mark": "4:10-124:25",
+      "Luke": "8:9-108:18b10:23-24"
+    }
+  },
+  {
+    "id": 124,
+    "section": "",
+    "title": "Interpretation of the Parable of the Sower",
+    "references": {
+      "Matthew": "13:18-23",
+      "Mark": "4:13-20",
+      "Luke": "8:11-15"
+    }
+  },
+  {
+    "id": 125,
+    "section": "",
+    "title": "\"He who has Ears to Hear, Let him Hear\"",
+    "references": {
+      "Matthew": "5:1510:267:213:12",
+      "Mark": "4:21-25",
+      "Luke": "8:16-18"
+    }
+  },
+  {
+    "id": 126,
+    "section": "",
+    "title": "The Parable of the Seed Growing Secretly",
+    "references": {
+      "Mark": "4:26-29"
+    }
+  },
+  {
+    "id": 127,
+    "section": "",
+    "title": "The Parable of the Tares",
+    "references": {
+      "Matthew": "13:24-30"
+    }
+  },
+  {
+    "id": 128,
+    "section": "",
+    "title": "The Parable of the Mustard Seed",
+    "references": {
+      "Matthew": "13:31-32",
+      "Mark": "4:30-32",
+      "Luke": "13:18-19"
+    }
+  },
+  {
+    "id": 129,
+    "section": "",
+    "title": "The Parable of the Leaven",
+    "references": {
+      "Matthew": "13:33",
+      "Luke": "13:20-21"
+    }
+  },
+  {
+    "id": 130,
+    "section": "",
+    "title": "Jesus' Use of Parables",
+    "references": {
+      "Matthew": "13:34-35",
+      "Mark": "4:33-34"
+    }
+  },
+  {
+    "id": 131,
+    "section": "",
+    "title": "Interpretation of the Parable of the Tares",
+    "references": {
+      "Matthew": "13:36-43"
+    }
+  },
+  {
+    "id": 132,
+    "section": "",
+    "title": "The Parables of the Hidden Treasure and of the Pearl",
+    "references": {
+      "Matthew": "13:44-46"
+    }
+  },
+  {
+    "id": 133,
+    "section": "",
+    "title": "The Parable of the Net",
+    "references": {
+      "Matthew": "13:47-50"
+    }
+  },
+  {
+    "id": 134,
+    "section": "",
+    "title": "Treasures New and Old",
+    "references": {
+      "Matthew": "13:51-52"
+    }
+  },
+  {
+    "id": 135,
+    "section": "",
+    "title": "Jesus' True Kindred",
+    "references": {
+      "Matthew": "12:46-50",
+      "Mark": "3:31-35",
+      "Luke": "8:19-21",
+      "John": "15:14"
+    }
+  },
+  {
+    "id": 136,
+    "section": "",
+    "title": "Stilling the Storm",
+    "references": {
+      "Matthew": "8:23-27",
+      "Mark": "4:35-41",
+      "Luke": "8:22-25"
+    }
+  },
+  {
+    "id": 137,
+    "section": "",
+    "title": "The Gerasene Demoniac",
+    "references": {
+      "Matthew": "8:28-34",
+      "Mark": "5:1-20",
+      "Luke": "8:26-39"
+    }
+  },
+  {
+    "id": 138,
+    "section": "",
+    "title": "Jairus' Daughter and the Woman with a Hemorrhage",
+    "references": {
+      "Matthew": "9:18-26",
+      "Mark": "5:21-43",
+      "Luke": "8:40-56"
+    }
+  },
+  {
+    "id": 139,
+    "section": "",
+    "title": "Jesus is Rejected at Nazareth",
+    "references": {
+      "Matthew": "13:53-58",
+      "Mark": "6:1-6a",
+      "Luke": "4:16-30"
+    }
+  },
+  {
+    "id": 140,
+    "section": "",
+    "title": "Second Journey (to Jerusalem)",
+    "references": {
+      "John": "5:1"
+    }
+  },
+  {
+    "id": 141,
+    "section": "",
+    "title": "The Healing at the Pool",
+    "references": {
+      "John": "5:2-47"
+    }
+  },
+  {
+    "id": 142,
+    "section": "",
+    "title": "Commissioning the Twelve",
+    "references": {
+      "Matthew": "9:3510:1,7-11,14",
+      "Mark": "6:6b-13",
+      "Luke": "9:1-6"
+    }
+  },
+  {
+    "id": 143,
+    "section": "",
+    "title": "Opinions regarding Jesus",
+    "references": {
+      "Matthew": "14:1-2",
+      "Mark": "6:14-16",
+      "Luke": "9:7-9"
+    }
+  },
+  {
+    "id": 144,
+    "section": "",
+    "title": "The Death of John the Baptist",
+    "references": {
+      "Matthew": "14:3-12",
+      "Mark": "6:17-29",
+      "Luke": "3:19-20"
+    }
+  },
+  {
+    "id": 145,
+    "section": "",
+    "title": "The Return of the Apostles",
+    "references": {
+      "Mark": "6:30-31",
+      "Luke": "9:10a"
+    }
+  },
+  {
+    "id": 146,
+    "section": "",
+    "title": "Five Thousand are Fed",
+    "references": {
+      "Matthew": "14:13-21",
+      "Mark": "6:32-44",
+      "Luke": "9: 10b-17",
+      "John": "6:1-15"
+    }
+  },
+  {
+    "id": 147,
+    "section": "",
+    "title": "The Walking on the Water",
+    "references": {
+      "Matthew": "14:22-33",
+      "Mark": "6:45-52",
+      "John": "6:16-21"
+    }
+  },
+  {
+    "id": 148,
+    "section": "",
+    "title": "Healings at Gennesaret",
+    "references": {
+      "Matthew": "14:34-36",
+      "Mark": "6:53-56",
+      "John": "6:22-25"
+    }
+  },
+  {
+    "id": 149,
+    "section": "",
+    "title": "The Bread of Life",
+    "references": {
+      "John": "6:26-59"
+    }
+  },
+  {
+    "id": 150,
+    "section": "",
+    "title": "Defilement - Traditional and Real",
+    "references": {
+      "Matthew": "15:1-20",
+      "Mark": "7:1-23",
+      "Luke": "11:37-416:39"
+    }
+  },
+  {
+    "id": 151,
+    "section": "",
+    "title": "The Syrophoenician (Canaanite) Woman",
+    "references": {
+      "Matthew": "15:21-28",
+      "Mark": "7:24-30"
+    }
+  },
+  {
+    "id": 152,
+    "section": "",
+    "title": "Jesus Heals a Deaf Mute and Many Others",
+    "references": {
+      "Matthew": "15:29-31",
+      "Mark": "7:31-37"
+    }
+  },
+  {
+    "id": 153,
+    "section": "",
+    "title": "Four Thousand are Fed",
+    "references": {
+      "Matthew": "15:32-39",
+      "Mark": "8:1-10"
+    }
+  },
+  {
+    "id": 154,
+    "section": "",
+    "title": "The Pharisees Seek a Sign",
+    "references": {
+      "Matthew": "16:1-412:38-39",
+      "Mark": "8:11-13",
+      "Luke": "11:1612:54-5611:29"
+    }
+  },
+  {
+    "id": 155,
+    "section": "",
+    "title": "The Leaven of the Pharisees",
+    "references": {
+      "Matthew": "16:5-12",
+      "Mark": "8:14-21",
+      "Luke": "12:1"
+    }
+  },
+  {
+    "id": 156,
+    "section": "",
+    "title": "A Blind Man is Healed at Bethsaida",
+    "references": {
+      "Mark": "8:22-26"
+    }
+  },
+  {
+    "id": 157,
+    "section": "",
+    "title": "Many Disciples Take Offense at Jesus",
+    "references": {
+      "John": "6:60-66"
+    }
+  },
+  {
+    "id": 158,
+    "section": "",
+    "title": "Peter's Confession",
+    "references": {
+      "Matthew": "16:13-20",
+      "Mark": "8:27-30",
+      "Luke": "9:18-21",
+      "John": "6:67-71"
+    }
+  },
+  {
+    "id": 159,
+    "section": "",
+    "title": "Jesus Foretells His Passion",
+    "references": {
+      "Matthew": "16:21-23",
+      "Mark": "8:31-33",
+      "Luke": "9:22"
+    }
+  },
+  {
+    "id": 160,
+    "section": "",
+    "title": "\"If Any Man would Come after Me\"",
+    "references": {
+      "Matthew": "16:24-28",
+      "Mark": "8:34-9:1",
+      "Luke": "9:23-27",
+      "John": "12:25"
+    }
+  },
+  {
+    "id": 161,
+    "section": "",
+    "title": "The Transfiguration",
+    "references": {
+      "Matthew": "17:1-9",
+      "Mark": "9:2-10",
+      "Luke": "9:28-36"
+    }
+  },
+  {
+    "id": 162,
+    "section": "",
+    "title": "The Coming of Elijah",
+    "references": {
+      "Matthew": "17:10-13",
+      "Mark": "9:11-13"
+    }
+  },
+  {
+    "id": 163,
+    "section": "",
+    "title": "Jesus Heals a Boy Possessed by a Spirit",
+    "references": {
+      "Matthew": "17:14-21",
+      "Mark": "9:14-29",
+      "Luke": "9:37-43a17:6"
+    }
+  },
+  {
+    "id": 164,
+    "section": "",
+    "title": "Jesus Foretells His Passion again",
+    "references": {
+      "Matthew": "17:22-23",
+      "Mark": "9:30-32",
+      "Luke": "9:43b-45"
+    }
+  },
+  {
+    "id": 165,
+    "section": "",
+    "title": "Payment of the Temple Tax",
+    "references": {
+      "Matthew": "17:24-27"
+    }
+  },
+  {
+    "id": 166,
+    "section": "",
+    "title": "True Greatness",
+    "references": {
+      "Matthew": "18:1-5",
+      "Mark": "9:33-37",
+      "Luke": "9:46-48",
+      "John": "13:20"
+    }
+  },
+  {
+    "id": 167,
+    "section": "",
+    "title": "The Strange Exorcist",
+    "references": {
+      "Matthew": "10:42",
+      "Mark": "9:38-41",
+      "Luke": "9:49-50"
+    }
+  },
+  {
+    "id": 168,
+    "section": "",
+    "title": "Warnings concerning Temptations",
+    "references": {
+      "Matthew": "18:6-95:13",
+      "Mark": "9:42-50",
+      "Luke": "17:1-214:34-35"
+    }
+  },
+  {
+    "id": 169,
+    "section": "",
+    "title": "The Parable of the Lost Sheep",
+    "references": {
+      "Matthew": "18:10-14",
+      "Luke": "15:3-7"
+    }
+  },
+  {
+    "id": 170,
+    "section": "",
+    "title": "On Reproving One's Brother",
+    "references": {
+      "Matthew": "18:15-18",
+      "Luke": "17:3",
+      "John": "20:23"
+    }
+  },
+  {
+    "id": 171,
+    "section": "",
+    "title": "\"Where Two or Three are Gathered Together\"",
+    "references": {
+      "Matthew": "18:19-20"
+    }
+  },
+  {
+    "id": 172,
+    "section": "",
+    "title": "On Reconciliation",
+    "references": {
+      "Matthew": "18:21-22",
+      "Luke": "17:4"
+    }
+  },
+  {
+    "id": 173,
+    "section": "",
+    "title": "The Parable of the Unforgiving Servant",
+    "references": {
+      "Matthew": "18:23-35"
+    }
+  },
+  {
+    "id": 174,
+    "section": "",
+    "title": "Decision to Go to Jerusalem",
+    "references": {
+      "Matthew": "19:1-2",
+      "Mark": "10:1",
+      "Luke": "9:51"
+    }
+  },
+  {
+    "id": 175,
+    "section": "",
+    "title": "Jesus is Rejected by Samaritans",
+    "references": {
+      "Luke": "9:52-56"
+    }
+  },
+  {
+    "id": 176,
+    "section": "",
+    "title": "On Following Jesus",
+    "references": {
+      "Matthew": "8:18-22",
+      "Luke": "9:57-62"
+    }
+  },
+  {
+    "id": 177,
+    "section": "",
+    "title": "Commissioning the Seventy",
+    "references": {
+      "Matthew": "9:37-3810:7-16",
+      "Luke": "10:1-12"
+    }
+  },
+  {
+    "id": 178,
+    "section": "",
+    "title": "Woes Pronounced on Galilaean Cities",
+    "references": {
+      "Matthew": "11:20-24",
+      "Luke": "10:13-15"
+    }
+  },
+  {
+    "id": 179,
+    "section": "",
+    "title": "\"He who Hears You, Hears Me\"",
+    "references": {
+      "Matthew": "10:40",
+      "Luke": "10:16",
+      "John": "13:20"
+    }
+  },
+  {
+    "id": 180,
+    "section": "",
+    "title": "The Return of the Seventy",
+    "references": {
+      "Luke": "10:17-20"
+    }
+  },
+  {
+    "id": 181,
+    "section": "",
+    "title": "Jesus' Thanksgiving to the Father, and the Blessedness of the Disciples",
+    "references": {
+      "Matthew": "11:25-2713:16-17",
+      "Luke": "10:21-24"
+    }
+  },
+  {
+    "id": 182,
+    "section": "",
+    "title": "The Lawyer's Question",
+    "references": {
+      "Matthew": "22:34-40",
+      "Mark": "12:28-34",
+      "Luke": "10:25-28"
+    }
+  },
+  {
+    "id": 183,
+    "section": "",
+    "title": "The Parable of the Good Samaritan",
+    "references": {
+      "Luke": "10:29-37"
+    }
+  },
+  {
+    "id": 184,
+    "section": "",
+    "title": "Mary and Martha",
+    "references": {
+      "Luke": "10:38-42"
+    }
+  },
+  {
+    "id": 185,
+    "section": "",
+    "title": "The Lord's Prayer",
+    "references": {
+      "Matthew": "6:9-13",
+      "Luke": "11:1-4"
+    }
+  },
+  {
+    "id": 186,
+    "section": "",
+    "title": "The Importunate Friend at Midnight",
+    "references": {
+      "Luke": "11:5-8"
+    }
+  },
+  {
+    "id": 187,
+    "section": "",
+    "title": "Encouragement to Pray",
+    "references": {
+      "Matthew": "7:7-11",
+      "Luke": "11:9-13"
+    }
+  },
+  {
+    "id": 188,
+    "section": "",
+    "title": "The Beelzebub Controversy",
+    "references": {
+      "Matthew": "12:22-30",
+      "Mark": "3:22-27",
+      "Luke": "11:14-23"
+    }
+  },
+  {
+    "id": 189,
+    "section": "",
+    "title": "The Return of the Evil Spirit",
+    "references": {
+      "Matthew": "12:43-45",
+      "Luke": "11:24-26"
+    }
+  },
+  {
+    "id": 190,
+    "section": "",
+    "title": "True Blessedness",
+    "references": {
+      "Luke": "11:27-28"
+    }
+  },
+  {
+    "id": 191,
+    "section": "",
+    "title": "The Sign of Jonah",
+    "references": {
+      "Matthew": "12:38-42",
+      "Mark": "8:11-12",
+      "Luke": "11:29-32"
+    }
+  },
+  {
+    "id": 192,
+    "section": "",
+    "title": "Concerning Light",
+    "references": {
+      "Matthew": "5:15",
+      "Mark": "4:21",
+      "Luke": "11:33"
+    }
+  },
+  {
+    "id": 193,
+    "section": "",
+    "title": "The Sound Eye",
+    "references": {
+      "Matthew": "6:22-23",
+      "Luke": "11:34-36"
+    }
+  },
+  {
+    "id": 194,
+    "section": "",
+    "title": "Discourses against the Pharisees and Lawyers",
+    "references": {
+      "Matthew": "15:1-9",
+      "Mark": "7:1-9",
+      "Luke": "11:37-54"
+    }
+  },
+  {
+    "id": 195,
+    "section": "",
+    "title": "The Leaven of the Pharisees",
+    "references": {
+      "Matthew": "16:5-6",
+      "Mark": "8:14-15",
+      "Luke": "12:1"
+    }
+  },
+  {
+    "id": 196,
+    "section": "",
+    "title": "Exhortation to Fearless Confession",
+    "references": {
+      "Matthew": "10:26-33",
+      "Luke": "12:2-9"
+    }
+  },
+  {
+    "id": 197,
+    "section": "",
+    "title": "The Sin against the Holy Spirit",
+    "references": {
+      "Matthew": "12:31-32",
+      "Mark": "3:28-30",
+      "Luke": "12:10"
+    }
+  },
+  {
+    "id": 198,
+    "section": "",
+    "title": "The Assistance of the Holy Spirit",
+    "references": {
+      "Matthew": "10:19-20",
+      "Mark": "13:11",
+      "Luke": "12:11-1221:14-15"
+    }
+  },
+  {
+    "id": 199,
+    "section": "",
+    "title": "Warning against Avarice",
+    "references": {
+      "Luke": "12:13-15"
+    }
+  },
+  {
+    "id": 200,
+    "section": "",
+    "title": "The Parable of the Rich Fool",
+    "references": {
+      "Luke": "12:16-21"
+    }
+  },
+  {
+    "id": 201,
+    "section": "",
+    "title": "Anxieties about Earthly Things",
+    "references": {
+      "Matthew": "6:25-34",
+      "Luke": "12:22-32"
+    }
+  },
+  {
+    "id": 202,
+    "section": "",
+    "title": "Treasures in Heaven",
+    "references": {
+      "Matthew": "6:19-21",
+      "Luke": "12:33-34"
+    }
+  },
+  {
+    "id": 203,
+    "section": "",
+    "title": "Watchfulness and Faithfulness",
+    "references": {
+      "Matthew": "24:42-51",
+      "Luke": "12:35-48"
+    }
+  },
+  {
+    "id": 204,
+    "section": "",
+    "title": "Division in Households",
+    "references": {
+      "Matthew": "10:34-36",
+      "Luke": "12:49-53"
+    }
+  },
+  {
+    "id": 205,
+    "section": "",
+    "title": "Interpreting the Times",
+    "references": {
+      "Matthew": "16:2-3",
+      "Luke": "12:54-56"
+    }
+  },
+  {
+    "id": 206,
+    "section": "",
+    "title": "Agreement with One's Accuser",
+    "references": {
+      "Matthew": "5:25-26",
+      "Luke": "12:57-59"
+    }
+  },
+  {
+    "id": 207,
+    "section": "",
+    "title": "Repentance or Destruction (the Parable of the Barren Fig Tree)",
+    "references": {
+      "Luke": "13:1-9"
+    }
+  },
+  {
+    "id": 208,
+    "section": "",
+    "title": "The Healing of the Crippled Woman on the Sabbath",
+    "references": {
+      "Luke": "13:10-17"
+    }
+  },
+  {
+    "id": 209,
+    "section": "",
+    "title": "The Parable of the Mustard Seed",
+    "references": {
+      "Matthew": "13:31-32",
+      "Mark": "4:30-32",
+      "Luke": "13:18-19"
+    }
+  },
+  {
+    "id": 210,
+    "section": "",
+    "title": "The Parable of the Leaven",
+    "references": {
+      "Matthew": "13:33",
+      "Luke": "13:20-21"
+    }
+  },
+  {
+    "id": 211,
+    "section": "",
+    "title": "Exclusion from the Kingdom",
+    "references": {
+      "Matthew": "7:13-147:22-238:11-1219:30",
+      "Mark": "10:31",
+      "Luke": "13:22-30"
+    }
+  },
+  {
+    "id": 212,
+    "section": "",
+    "title": "A Warning against Herod",
+    "references": {
+      "Luke": "13:31-33"
+    }
+  },
+  {
+    "id": 213,
+    "section": "",
+    "title": "The Lament over Jerusalem",
+    "references": {
+      "Matthew": "23:37-39",
+      "Luke": "13:34-35"
+    }
+  },
+  {
+    "id": 214,
+    "section": "",
+    "title": "The Healing of the Man with Dropsy",
+    "references": {
+      "Luke": "14:1-6"
+    }
+  },
+  {
+    "id": 215,
+    "section": "",
+    "title": "Teaching on Humility",
+    "references": {
+      "Luke": "14:7-14"
+    }
+  },
+  {
+    "id": 216,
+    "section": "",
+    "title": "The Parable of the Great Supper",
+    "references": {
+      "Matthew": "22:1-14",
+      "Luke": "14:15-24"
+    }
+  },
+  {
+    "id": 217,
+    "section": "",
+    "title": "The Conditions of Discipleship",
+    "references": {
+      "Matthew": "10:37-38",
+      "Luke": "14:25-33"
+    }
+  },
+  {
+    "id": 218,
+    "section": "",
+    "title": "The Parable of Salt",
+    "references": {
+      "Matthew": "5:13",
+      "Mark": "9:49-50",
+      "Luke": "14:34-35"
+    }
+  },
+  {
+    "id": 219,
+    "section": "",
+    "title": "The Parable of the Lost Sheep",
+    "references": {
+      "Matthew": "18:12-14",
+      "Luke": "15:1-7"
+    }
+  },
+  {
+    "id": 220,
+    "section": "",
+    "title": "The Parable of the Lost Coin",
+    "references": {
+      "Luke": "15:8-10"
+    }
+  },
+  {
+    "id": 221,
+    "section": "",
+    "title": "The Parable of the Prodigal Son",
+    "references": {
+      "Luke": "15:11-32"
+    }
+  },
+  {
+    "id": 222,
+    "section": "",
+    "title": "The Parable of the Unjust Steward",
+    "references": {
+      "Luke": "16:1-9"
+    }
+  },
+  {
+    "id": 223,
+    "section": "",
+    "title": "On Faithfulness in What is Least",
+    "references": {
+      "Luke": "16:10-12"
+    }
+  },
+  {
+    "id": 224,
+    "section": "",
+    "title": "On Serving Two Masters",
+    "references": {
+      "Matthew": "6:24",
+      "Luke": "16:13"
+    }
+  },
+  {
+    "id": 225,
+    "section": "",
+    "title": "The Pharisees Reproved",
+    "references": {
+      "Luke": "16:14-15"
+    }
+  },
+  {
+    "id": 226,
+    "section": "",
+    "title": "Concerning the Law",
+    "references": {
+      "Matthew": "11:12-135:18",
+      "Luke": "16:16-17"
+    }
+  },
+  {
+    "id": 227,
+    "section": "",
+    "title": "Concerning Divorce",
+    "references": {
+      "Matthew": "19:9",
+      "Mark": "10:11-12",
+      "Luke": "16:18"
+    }
+  },
+  {
+    "id": 228,
+    "section": "",
+    "title": "The Parable of the Rich Man and Lazarus",
+    "references": {
+      "Luke": "16:19-31"
+    }
+  },
+  {
+    "id": 229,
+    "section": "",
+    "title": "Warning against Offenses",
+    "references": {
+      "Matthew": "18:6-7",
+      "Mark": "9:42",
+      "Luke": "17:1-3a"
+    }
+  },
+  {
+    "id": 230,
+    "section": "",
+    "title": "On Forgiveness",
+    "references": {
+      "Matthew": "18:15",
+      "Luke": "17:3b-4"
+    }
+  },
+  {
+    "id": 231,
+    "section": "",
+    "title": "On Faith",
+    "references": {
+      "Matthew": "17:19-21",
+      "Mark": "9:28-29",
+      "Luke": "17:5-6"
+    }
+  },
+  {
+    "id": 232,
+    "section": "",
+    "title": "We are Unprofitable Servants",
+    "references": {
+      "Luke": "17:7-10"
+    }
+  },
+  {
+    "id": 233,
+    "section": "",
+    "title": "The Cleansing of the Ten Lepers",
+    "references": {
+      "Luke": "17:11-19"
+    }
+  },
+  {
+    "id": 234,
+    "section": "",
+    "title": "On the Coming of the Kingdom of God",
+    "references": {
+      "Luke": "17:20-21"
+    }
+  },
+  {
+    "id": 235,
+    "section": "",
+    "title": "The Day of the Son of Man",
+    "references": {
+      "Matthew": "24:2324:26-2724:37-3924:17-1810:3924:40-4124:28",
+      "Mark": "13:19-2313:14-16",
+      "Luke": "17:22-37",
+      "John": "12:25"
+    }
+  },
+  {
+    "id": 236,
+    "section": "",
+    "title": "The Parable of the Unjust Judge",
+    "references": {
+      "Luke": "18:1-8"
+    }
+  },
+  {
+    "id": 237,
+    "section": "",
+    "title": "The Pharisee and the Publican",
+    "references": {
+      "Luke": "18:9-14"
+    }
+  },
+  {
+    "id": 238,
+    "section": "",
+    "title": "Jesus Remains in Galilee",
+    "references": {
+      "John": "7:1-9"
+    }
+  },
+  {
+    "id": 239,
+    "section": "",
+    "title": "Journey to Jerusalem in Secret",
+    "references": {
+      "John": "7:10-13"
+    }
+  },
+  {
+    "id": 240,
+    "section": "",
+    "title": "Teaching in the Temple",
+    "references": {
+      "John": "7:14-39"
+    }
+  },
+  {
+    "id": 241,
+    "section": "",
+    "title": "Division among the People regarding Jesus",
+    "references": {
+      "John": "7:40-52"
+    }
+  },
+  {
+    "id": 242,
+    "section": "",
+    "title": "The Woman Caught in Adultery",
+    "references": {
+      "John": "7:53-8:11"
+    }
+  },
+  {
+    "id": 243,
+    "section": "",
+    "title": "\"I am the Light of the World\"",
+    "references": {
+      "John": "8:12-20"
+    }
+  },
+  {
+    "id": 244,
+    "section": "",
+    "title": "Discussion with the Jews",
+    "references": {
+      "John": "8:21-29"
+    }
+  },
+  {
+    "id": 245,
+    "section": "",
+    "title": "\"The Truth will Make You Free\"",
+    "references": {
+      "John": "8:30-36"
+    }
+  },
+  {
+    "id": 246,
+    "section": "",
+    "title": "Children of the Devil",
+    "references": {
+      "John": "8:37-47"
+    }
+  },
+  {
+    "id": 247,
+    "section": "",
+    "title": "\"Before Abraham was, I am\"",
+    "references": {
+      "John": "8:48-59"
+    }
+  },
+  {
+    "id": 248,
+    "section": "",
+    "title": "Jesus Heals the Man Born Blind",
+    "references": {
+      "John": "9:1-41"
+    }
+  },
+  {
+    "id": 249,
+    "section": "",
+    "title": "\"I am the Good Shepherd\"",
+    "references": {
+      "John": "10:1-18"
+    }
+  },
+  {
+    "id": 250,
+    "section": "",
+    "title": "Division among the Jews again",
+    "references": {
+      "John": "10:19-21"
+    }
+  },
+  {
+    "id": 251,
+    "section": "",
+    "title": "Departure to Judea",
+    "references": {
+      "Matthew": "19:1-2",
+      "Mark": "10:1",
+      "Luke": "9:51"
+    }
+  },
+  {
+    "id": 252,
+    "section": "",
+    "title": "On Divorce and Celibacy",
+    "references": {
+      "Matthew": "19:3-12",
+      "Mark": "10:2-12",
+      "Luke": "16:18"
+    }
+  },
+  {
+    "id": 253,
+    "section": "",
+    "title": "Jesus Blesses the Children",
+    "references": {
+      "Matthew": "19:13-15",
+      "Mark": "10:13-16",
+      "Luke": "18:15-17"
+    }
+  },
+  {
+    "id": 254,
+    "section": "",
+    "title": "The Rich Young Man",
+    "references": {
+      "Matthew": "19:16-22",
+      "Mark": "10:17-22",
+      "Luke": "18:18-23"
+    }
+  },
+  {
+    "id": 255,
+    "section": "",
+    "title": "On Riches and the Rewards of Discipleship",
+    "references": {
+      "Matthew": "19:23-30",
+      "Mark": "10:23-31",
+      "Luke": "18:24-3022:28-30"
+    }
+  },
+  {
+    "id": 256,
+    "section": "",
+    "title": "The Parable of the Laborers in the Vineyard",
+    "references": {
+      "Matthew": "20:1-16",
+      "Mark": "10:31",
+      "Luke": "13:30"
+    }
+  },
+  {
+    "id": 257,
+    "section": "",
+    "title": "Jesus at the Feast of Dedication in Jerusalem",
+    "references": {
+      "John": "10:22-39"
+    }
+  },
+  {
+    "id": 258,
+    "section": "",
+    "title": "Jesus Withdraws across the Jordan",
+    "references": {
+      "John": "10:40-42"
+    }
+  },
+  {
+    "id": 259,
+    "section": "",
+    "title": "The Raising of Lazarus",
+    "references": {
+      "John": "11:1-44"
+    }
+  },
+  {
+    "id": 260,
+    "section": "",
+    "title": "The Chief Priests and Pharisees Take Counsel against Jesus",
+    "references": {
+      "John": "11:45-53"
+    }
+  },
+  {
+    "id": 261,
+    "section": "",
+    "title": "Jesus Retires to Ephraim",
+    "references": {
+      "John": "11:54-57"
+    }
+  },
+  {
+    "id": 262,
+    "section": "",
+    "title": "The Third Prediction of the Passion",
+    "references": {
+      "Matthew": "20:17-19",
+      "Mark": "10:32-34",
+      "Luke": "18:31-34"
+    }
+  },
+  {
+    "id": 263,
+    "section": "",
+    "title": "The Sons of Zebedee; Precedence among the Disciples",
+    "references": {
+      "Matthew": "20:20-28",
+      "Mark": "10:35-45",
+      "Luke": "22:24-27"
+    }
+  },
+  {
+    "id": 264,
+    "section": "",
+    "title": "The Healing of the Blind Men (Bartimaeus)",
+    "references": {
+      "Matthew": "20:29-349:27-31",
+      "Mark": "10:46-52",
+      "Luke": "18:35-43"
+    }
+  },
+  {
+    "id": 265,
+    "section": "",
+    "title": "Zacchaeus",
+    "references": {
+      "Matthew": "18:11",
+      "Luke": "19:1-10"
+    }
+  },
+  {
+    "id": 266,
+    "section": "",
+    "title": "The Parable of the Pounds",
+    "references": {
+      "Matthew": "25:14-30",
+      "Mark": "13:34",
+      "Luke": "19:11-27"
+    }
+  },
+  {
+    "id": 267,
+    "section": "",
+    "title": "The Anointing at Bethany",
+    "references": {
+      "Matthew": "26:6-13",
+      "Mark": "14:3-9",
+      "Luke": "7:36-50",
+      "John": "12:1-8"
+    }
+  },
+  {
+    "id": 268,
+    "section": "",
+    "title": "The Plot against Lazarus",
+    "references": {
+      "John": "12:9-11"
+    }
+  },
+  {
+    "id": 269,
+    "section": "",
+    "title": "The Triumphal Entry",
+    "references": {
+      "Matthew": "21:1-9",
+      "Mark": "11:1-10",
+      "Luke": "19:28-40",
+      "John": "12:12-19"
+    }
+  },
+  {
+    "id": 270,
+    "section": "",
+    "title": "Jesus Weeps over Jerusalem",
+    "references": {
+      "Luke": "19:41-44"
+    }
+  },
+  {
+    "id": 271,
+    "section": "",
+    "title": "Jesus in Jerusalem (Cleansing the Temple), Return to Bethany",
+    "references": {
+      "Matthew": "21:10-17",
+      "Mark": "11:1111:15-17",
+      "Luke": "19:45-46"
+    }
+  },
+  {
+    "id": 272,
+    "section": "",
+    "title": "The Cursing of the Fig Tree",
+    "references": {
+      "Matthew": "21:18-19",
+      "Mark": "11:12-14"
+    }
+  },
+  {
+    "id": 273,
+    "section": "",
+    "title": "The Cleansing of the Temple",
+    "references": {
+      "Matthew": "21:12-13",
+      "Mark": "11:15-17",
+      "Luke": "19:45-46",
+      "John": "2:13-17"
+    }
+  },
+  {
+    "id": 274,
+    "section": "",
+    "title": "The Chief Priests and Scribes Conspire against Jesus",
+    "references": {
+      "Mark": "11:18-19",
+      "Luke": "19:47-48"
+    }
+  },
+  {
+    "id": 275,
+    "section": "",
+    "title": "The Fig Tree is Withered",
+    "references": {
+      "Matthew": "21:20-226:14-15",
+      "Mark": "11:20-26"
+    }
+  },
+  {
+    "id": 276,
+    "section": "",
+    "title": "The Question about Authority",
+    "references": {
+      "Matthew": "21:23-27",
+      "Mark": "11:27-33",
+      "Luke": "20:1-8"
+    }
+  },
+  {
+    "id": 277,
+    "section": "",
+    "title": "The Parable of the Two Sons",
+    "references": {
+      "Matthew": "21:28-32"
+    }
+  },
+  {
+    "id": 278,
+    "section": "",
+    "title": "The Parable of the Wicked Husbandmen",
+    "references": {
+      "Matthew": "21:33-46",
+      "Mark": "12:1-12",
+      "Luke": "20:9-19"
+    }
+  },
+  {
+    "id": 279,
+    "section": "",
+    "title": "The Parable of the Great Supper",
+    "references": {
+      "Matthew": "22:1-14",
+      "Luke": "14:15-24"
+    }
+  },
+  {
+    "id": 280,
+    "section": "",
+    "title": "On Paying Tribute to Caesar",
+    "references": {
+      "Matthew": "22:15-22",
+      "Mark": "12:13-17",
+      "Luke": "20:20-26"
+    }
+  },
+  {
+    "id": 281,
+    "section": "",
+    "title": "The Question about the Resurrection",
+    "references": {
+      "Matthew": "22:23-33",
+      "Mark": "12:18-27",
+      "Luke": "20:27-40"
+    }
+  },
+  {
+    "id": 282,
+    "section": "",
+    "title": "The Great Commandment",
+    "references": {
+      "Matthew": "22:34-40",
+      "Mark": "12:28-34",
+      "Luke": "10:25-28"
+    }
+  },
+  {
+    "id": 283,
+    "section": "",
+    "title": "The Question about David's Son",
+    "references": {
+      "Matthew": "22:41-46",
+      "Mark": "12:35-37a",
+      "Luke": "20:41-44"
+    }
+  },
+  {
+    "id": 284,
+    "section": "",
+    "title": "Woe to the Scribes and Pharisees",
+    "references": {
+      "Matthew": "23:1-36",
+      "Mark": "12:37b-40",
+      "Luke": "20:45-47"
+    }
+  },
+  {
+    "id": 285,
+    "section": "",
+    "title": "Jesus' Lament over Jerusalem",
+    "references": {
+      "Matthew": "23:37-39",
+      "Luke": "13:34-35"
+    }
+  },
+  {
+    "id": 286,
+    "section": "",
+    "title": "The Widow's Mite",
+    "references": {
+      "Mark": "12:41-44",
+      "Luke": "21:1-4"
+    }
+  },
+  {
+    "id": 287,
+    "section": "",
+    "title": "Prediction of the Destruction of the Temple",
+    "references": {
+      "Matthew": "24:1-2",
+      "Mark": "13:1-2",
+      "Luke": "21:5-6"
+    }
+  },
+  {
+    "id": 288,
+    "section": "",
+    "title": "Signs before the End",
+    "references": {
+      "Matthew": "24:3-8",
+      "Mark": "13:3-8",
+      "Luke": "21:7-11"
+    }
+  },
+  {
+    "id": 289,
+    "section": "",
+    "title": "Persecutions Foretold",
+    "references": {
+      "Matthew": "24:9-1410:17-22a",
+      "Mark": "13:9-13",
+      "Luke": "21:12-1912:11-12"
+    }
+  },
+  {
+    "id": 290,
+    "section": "",
+    "title": "The Desolating Sacrilege",
+    "references": {
+      "Matthew": "24:15-22",
+      "Mark": "13:14-20",
+      "Luke": "21:20-24"
+    }
+  },
+  {
+    "id": 291,
+    "section": "",
+    "title": "False Christs and False Prophets",
+    "references": {
+      "Matthew": "24:23-28",
+      "Mark": "13:21-23",
+      "Luke": "17:23-2417:37b"
+    }
+  },
+  {
+    "id": 292,
+    "section": "",
+    "title": "The Coming of the Son of Man",
+    "references": {
+      "Matthew": "24:29-31",
+      "Mark": "13:24-27",
+      "Luke": "21:25-28"
+    }
+  },
+  {
+    "id": 293,
+    "section": "",
+    "title": "The Time of the Coming: the Parable of the Fig Tree",
+    "references": {
+      "Matthew": "24:32-36",
+      "Mark": "13:28-32",
+      "Luke": "21:29-33"
+    }
+  },
+  {
+    "id": 294,
+    "section": "",
+    "title": "Conclusion: \"Take Heed, Watch!\" (According to Mark)",
+    "references": {
+      "Matthew": "25:13-1524:42",
+      "Mark": "13:33-37",
+      "Luke": "19:12-1312:40"
+    }
+  },
+  {
+    "id": 295,
+    "section": "",
+    "title": "Conclusion: \"Take Heed, Watch!\" (According to Luke)",
+    "references": {
+      "Luke": "21:34-36"
+    }
+  },
+  {
+    "id": 296,
+    "section": "",
+    "title": "The Parable of the Flood and Exhortation to Watchfulness",
+    "references": {
+      "Matthew": "24:37-44",
+      "Mark": "13:35",
+      "Luke": "17:26-3612:39-40"
+    }
+  },
+  {
+    "id": 297,
+    "section": "",
+    "title": "The Parable of the Good Servant and the Wicked Servant",
+    "references": {
+      "Matthew": "24:45-51",
+      "Luke": "12:41-46"
+    }
+  },
+  {
+    "id": 298,
+    "section": "",
+    "title": "The Parable of the Ten Virgins",
+    "references": {
+      "Matthew": "25:1-13"
+    }
+  },
+  {
+    "id": 299,
+    "section": "",
+    "title": "The Parable of the Talents",
+    "references": {
+      "Matthew": "25:14-30",
+      "Mark": "13:34",
+      "Luke": "19:11-27"
+    }
+  },
+  {
+    "id": 300,
+    "section": "",
+    "title": "The Last Judgment",
+    "references": {
+      "Matthew": "25:31-46",
+      "John": "5:29"
+    }
+  },
+  {
+    "id": 301,
+    "section": "",
+    "title": "The Ministry of Jesus in Jerusalem",
+    "references": {
+      "Luke": "21:37-38"
+    }
+  },
+  {
+    "id": 302,
+    "section": "",
+    "title": "Greeks Seek Jesus; Discourse on His Death",
+    "references": {
+      "John": "12:20-36"
+    }
+  },
+  {
+    "id": 303,
+    "section": "",
+    "title": "The Unbelief of the People",
+    "references": {
+      "John": "12:37-43"
+    }
+  },
+  {
+    "id": 304,
+    "section": "",
+    "title": "Judgment by the Word",
+    "references": {
+      "John": "12:44-50"
+    }
+  },
+  {
+    "id": 305,
+    "section": "",
+    "title": "Jesus' Death is Premeditated",
+    "references": {
+      "Matthew": "26:1-5",
+      "Mark": "14:1-2",
+      "Luke": "22:1-2"
+    }
+  },
+  {
+    "id": 306,
+    "section": "",
+    "title": "The Anointing in Bethany",
+    "references": {
+      "Matthew": "26:6-13",
+      "Mark": "14:3-9",
+      "Luke": "7:36-50",
+      "John": "12:1-8"
+    }
+  },
+  {
+    "id": 307,
+    "section": "",
+    "title": "The Betrayal by Judas",
+    "references": {
+      "Matthew": "26:14-16",
+      "Mark": "14:10-11",
+      "Luke": "22:3-6"
+    }
+  },
+  {
+    "id": 308,
+    "section": "",
+    "title": "Preparation for the Passover",
+    "references": {
+      "Matthew": "26:17-20",
+      "Mark": "14:12-17",
+      "Luke": "22:7-14"
+    }
+  },
+  {
+    "id": 309,
+    "section": "",
+    "title": "Washing the Disciples' Feet",
+    "references": {
+      "Matthew": "10:2410:40",
+      "Luke": "6:40",
+      "John": "13:1-20"
+    }
+  },
+  {
+    "id": 310,
+    "section": "",
+    "title": "Jesus Foretells His Betrayal",
+    "references": {
+      "Matthew": "26:21-25",
+      "Mark": "14:18-21",
+      "Luke": "22:21-23",
+      "John": "13:21-30"
+    }
+  },
+  {
+    "id": 311,
+    "section": "",
+    "title": "The Last Supper",
+    "references": {
+      "Matthew": "26:26-29",
+      "Mark": "14:22-25",
+      "Luke": "22:15-20"
+    }
+  },
+  {
+    "id": 312,
+    "section": "",
+    "title": "Jesus Foretells His Betrayal",
+    "references": {
+      "Matthew": "26:21-25",
+      "Mark": "14:18-21",
+      "Luke": "22:21-23",
+      "John": "13:21-30"
+    }
+  },
+  {
+    "id": 313,
+    "section": "",
+    "title": "Precedence among the Disciples and the Reward of Discipleship",
+    "references": {
+      "Matthew": "20:24-2819:28",
+      "Mark": "10:41-45",
+      "Luke": "22:24-30"
+    }
+  },
+  {
+    "id": 314,
+    "section": "",
+    "title": "The New Commandment of Love",
+    "references": {
+      "John": "13:31-35"
+    }
+  },
+  {
+    "id": 315,
+    "section": "",
+    "title": "Peter's Denial Predicted",
+    "references": {
+      "Matthew": "26:30-35",
+      "Mark": "14:26-31",
+      "Luke": "22:31-34",
+      "John": "13:36-38"
+    }
+  },
+  {
+    "id": 316,
+    "section": "",
+    "title": "The Two Swords",
+    "references": {
+      "Luke": "22:35-38"
+    }
+  },
+  {
+    "id": 317,
+    "section": "",
+    "title": "\"Let Not Your Hearts be Troubled\"",
+    "references": {
+      "John": "14:1-14"
+    }
+  },
+  {
+    "id": 318,
+    "section": "",
+    "title": "The Promise of the Paraclete",
+    "references": {
+      "John": "14:15-26"
+    }
+  },
+  {
+    "id": 319,
+    "section": "",
+    "title": "The Gift of Peace",
+    "references": {
+      "John": "14:27-31"
+    }
+  },
+  {
+    "id": 320,
+    "section": "",
+    "title": "Jesus the True Vine",
+    "references": {
+      "John": "15:1-8"
+    }
+  },
+  {
+    "id": 321,
+    "section": "",
+    "title": "\"Abide in My Love\"",
+    "references": {
+      "John": "15:9-17"
+    }
+  },
+  {
+    "id": 322,
+    "section": "",
+    "title": "The World's Hatred",
+    "references": {
+      "John": "15:18-25"
+    }
+  },
+  {
+    "id": 323,
+    "section": "",
+    "title": "The Witness of the Paraclete",
+    "references": {
+      "John": "15:26-27"
+    }
+  },
+  {
+    "id": 324,
+    "section": "",
+    "title": "On Persecutions",
+    "references": {
+      "John": "16:1-4"
+    }
+  },
+  {
+    "id": 325,
+    "section": "",
+    "title": "The Work of the Paraclete",
+    "references": {
+      "John": "16:5-15"
+    }
+  },
+  {
+    "id": 326,
+    "section": "",
+    "title": "Sorrow Turned to Joy",
+    "references": {
+      "John": "16:16-22"
+    }
+  },
+  {
+    "id": 327,
+    "section": "",
+    "title": "Prayer in the Name of Jesus",
+    "references": {
+      "John": "16:23-28"
+    }
+  },
+  {
+    "id": 328,
+    "section": "",
+    "title": "Prediction of the Disciples' Flight",
+    "references": {
+      "John": "16:29-33"
+    }
+  },
+  {
+    "id": 329,
+    "section": "",
+    "title": "The Intercessory Prayer",
+    "references": {
+      "John": "17:1-26"
+    }
+  },
+  {
+    "id": 330,
+    "section": "",
+    "title": "Gethsemane",
+    "references": {
+      "Matthew": "26:36-46",
+      "Mark": "14:32-42",
+      "Luke": "22:39-46",
+      "John": "18:112:27"
+    }
+  },
+  {
+    "id": 331,
+    "section": "",
+    "title": "Jesus Arrested",
+    "references": {
+      "Matthew": "26:47-56",
+      "Mark": "14:43-52",
+      "Luke": "22:47-53",
+      "John": "18:2-12"
+    }
+  },
+  {
+    "id": 332,
+    "section": "",
+    "title": "Jesus before the Sanhedrin (Peter's Denial)",
+    "references": {
+      "Matthew": "26:57-68",
+      "Mark": "14:53-65",
+      "Luke": "22:54-71",
+      "John": "18:13-24"
+    }
+  },
+  {
+    "id": 333,
+    "section": "",
+    "title": "Peter's Denial",
+    "references": {
+      "Matthew": "26:69-75",
+      "Mark": "14:66-72",
+      "Luke": "22:56-62",
+      "John": "18:25-27"
+    }
+  },
+  {
+    "id": 334,
+    "section": "",
+    "title": "Jesus Delivered to Pilate",
+    "references": {
+      "Matthew": "27:1-2",
+      "Mark": "15:1",
+      "Luke": "23:1",
+      "John": "18:28"
+    }
+  },
+  {
+    "id": 335,
+    "section": "",
+    "title": "The Death of Judas",
+    "references": {
+      "Matthew": "27:3-10"
+    }
+  },
+  {
+    "id": 336,
+    "section": "",
+    "title": "The Trial before Pilate",
+    "references": {
+      "Matthew": "27:11-14",
+      "Mark": "15:2-5",
+      "Luke": "23:2-5",
+      "John": "18:29-38"
+    }
+  },
+  {
+    "id": 337,
+    "section": "",
+    "title": "Jesus before Herod",
+    "references": {
+      "Luke": "23:6-12"
+    }
+  },
+  {
+    "id": 338,
+    "section": "",
+    "title": "Pilate Declares Jesus Innocent",
+    "references": {
+      "Luke": "23:13-16"
+    }
+  },
+  {
+    "id": 339,
+    "section": "",
+    "title": "Jesus or Barabbas?",
+    "references": {
+      "Matthew": "27:15-23",
+      "Mark": "15:6-14",
+      "Luke": "23:17-23",
+      "John": "18:39-40"
+    }
+  },
+  {
+    "id": 340,
+    "section": "",
+    "title": "\"Behold the Man!\"",
+    "references": {
+      "Matthew": "27:28-31a",
+      "Mark": "15:17-20a",
+      "John": "19:1-15"
+    }
+  },
+  {
+    "id": 341,
+    "section": "",
+    "title": "Pilate Delivers Jesus to be Crucified",
+    "references": {
+      "Matthew": "27:24-26",
+      "Mark": "15:15",
+      "Luke": "23:24-25",
+      "John": "19:16"
+    }
+  },
+  {
+    "id": 342,
+    "section": "",
+    "title": "Jesus Mocked by the Soldiers",
+    "references": {
+      "Matthew": "27:27-31a",
+      "Mark": "15:16-20a",
+      "John": "19:2-3"
+    }
+  },
+  {
+    "id": 343,
+    "section": "",
+    "title": "The Road to Golgotha",
+    "references": {
+      "Matthew": "27:31b-32",
+      "Mark": "15:20b-21",
+      "Luke": "23:26-32",
+      "John": "19:17"
+    }
+  },
+  {
+    "id": 344,
+    "section": "",
+    "title": "The Crucifixion",
+    "references": {
+      "Matthew": "27:33-37",
+      "Mark": "15:22-26",
+      "Luke": "23:33-34",
+      "John": "19:17b-27"
+    }
+  },
+  {
+    "id": 345,
+    "section": "",
+    "title": "Jesus Derided on the Cross",
+    "references": {
+      "Matthew": "27:38-43",
+      "Mark": "15:27-32a",
+      "Luke": "23:35-38"
+    }
+  },
+  {
+    "id": 346,
+    "section": "",
+    "title": "The Two Thieves",
+    "references": {
+      "Matthew": "27:44",
+      "Mark": "15:32b",
+      "Luke": "23:39-43"
+    }
+  },
+  {
+    "id": 347,
+    "section": "",
+    "title": "The Death of Jesus",
+    "references": {
+      "Matthew": "27:45-54",
+      "Mark": "15:33-39",
+      "Luke": "23:44-48",
+      "John": "19:28-30"
+    }
+  },
+  {
+    "id": 348,
+    "section": "",
+    "title": "Witnesses of the Crucifixion",
+    "references": {
+      "Matthew": "27:55-56",
+      "Mark": "15:40-41",
+      "Luke": "23:49",
+      "John": "19:25-27"
+    }
+  },
+  {
+    "id": 349,
+    "section": "",
+    "title": "Jesus' Side Pierced",
+    "references": {
+      "John": "19:31-37"
+    }
+  },
+  {
+    "id": 350,
+    "section": "",
+    "title": "The Burial of Jesus",
+    "references": {
+      "Matthew": "27:57-61",
+      "Mark": "15:42-47",
+      "Luke": "23:50-56",
+      "John": "19:38-42"
+    }
+  },
+  {
+    "id": 351,
+    "section": "",
+    "title": "The Guard at the Tomb",
+    "references": {
+      "Matthew": "27:62-66"
+    }
+  },
+  {
+    "id": 352,
+    "section": "",
+    "title": "The Women at the Tomb",
+    "references": {
+      "Matthew": "28:1-8",
+      "Mark": "16:1-8",
+      "Luke": "24:1-12",
+      "John": "20:1-13"
+    }
+  },
+  {
+    "id": 353,
+    "section": "",
+    "title": "Jesus Appears to the Women",
+    "references": {
+      "Matthew": "28:9-10",
+      "Mark": "16:9-11",
+      "Luke": "24:10-11",
+      "John": "20:14-18"
+    }
+  },
+  {
+    "id": 354,
+    "section": "",
+    "title": "The Report of the Guard",
+    "references": {
+      "Matthew": "28:11-15"
+    }
+  },
+  {
+    "id": 355,
+    "section": "",
+    "title": "Jesus Appears to Two on the Way to Emmaus",
+    "references": {
+      "Mark": "16:12-13",
+      "Luke": "24:13-35"
+    }
+  },
+  {
+    "id": 356,
+    "section": "",
+    "title": "Jesus Appears to His Disciples (Thomas being Absent)",
+    "references": {
+      "Luke": "24:36-43",
+      "John": "20:19-23"
+    }
+  },
+  {
+    "id": 357,
+    "section": "",
+    "title": "Jesus Appears to His Disciples (Thomas being Present)",
+    "references": {
+      "John": "20:24-29"
+    }
+  },
+  {
+    "id": 358,
+    "section": "",
+    "title": "Jesus Appears to the Eleven While They Sit at Table",
+    "references": {
+      "Mark": "16:14-18"
+    }
+  },
+  {
+    "id": 359,
+    "section": "",
+    "title": "Jesus Appears to the Eleven on a Mountain in Galilee",
+    "references": {
+      "Matthew": "28:16-20"
+    }
+  },
+  {
+    "id": 360,
+    "section": "",
+    "title": "Jesus Appears to His Disciples by the Sea of Tiberias",
+    "references": {
+      "John": "21:1-14"
+    }
+  },
+  {
+    "id": 361,
+    "section": "",
+    "title": "Paul's Account of the Appearances of Jesus",
+    "references": {
+      "Mark": "1 Cor: 15:3-8"
+    }
+  },
+  {
+    "id": 362,
+    "section": "",
+    "title": "The Shorter Ending of Mark",
+    "references": {
+      "Mark": "see note below"
+    }
+  },
+  {
+    "id": 363,
+    "section": "",
+    "title": "The Longer Ending of Mark",
+    "references": {
+      "Mark": "16:9-20"
+    }
+  },
+  {
+    "id": 364,
+    "section": "",
+    "title": "The Ending of Matthew: The Great Commission",
+    "references": {
+      "Matthew": "28:16-20"
+    }
+  },
+  {
+    "id": 365,
+    "section": "",
+    "title": "The Ending of Luke: Jesus' Last Words and Ascension",
+    "references": {
+      "Mark": "16:15,19",
+      "Luke": "24:44-53"
+    }
+  },
+  {
+    "id": 366,
+    "section": "",
+    "title": "The Ending of John",
+    "references": {
+      "John": "20:30-31"
+    }
+  },
+  {
+    "id": 367,
+    "section": "",
+    "title": "The Appendix to John: Jesus at the Sea of Tiberias.",
+    "references": {
+      "John": "21:1-25"
+    }
+  }
+]

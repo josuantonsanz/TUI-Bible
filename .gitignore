@@ -1,0 +1,44 @@
+# Python environments, bytecode, and tool/test caches
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# IDE and OS files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Local AI-assistant configuration (not part of the published project)
+GEMINI.md
+CLAUDE.md
+
+# Secrets
+.env
+.env.*
+!.env.example
+keys.json
+!keys.example.json
+
+# Local runtime state. Databases, settings, and backups are written to the
+# per-user data directory; these rules only guard against stray copies inside
+# the checkout.
+opengnt.db
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+backups/
+
+# Restricted material that is NOT redistributable. The Biblia de Jerusalén
+# derived Spanish text stays local-only. Every other startup input is tracked
+# and documented in startup/README.md and docs/data-provenance.md.
+startup/spanish_bible.json
+
+# Generated/research output
+*.log

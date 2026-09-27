@@ -1,0 +1,11 @@
+# Normalize source text to LF in the repository so the tree is identical on
+# every platform.
+* text=auto eol=lf
+
+# Bundled datasets are fixed third-party artifacts. Keep them byte-for-byte
+# (no end-of-line conversion) and out of diffs, line counts, and GitHub
+# language statistics.
+startup/*.csv -text -diff linguist-generated
+startup/*.json -text -diff linguist-generated
+opengnt_interface/data/parallels.json -diff linguist-generated
+uv.lock -diff linguist-generated
