@@ -91,7 +91,6 @@ Before creating the first public commit or release:
 - [ ] Confirm the maintainer accepts the bundled-data licences and the
   Abbott-Smith follow-up.
 - [x] Add `[project.urls]` metadata once the public repository exists
-  (`https://github.com/josuantonsanz/TUI-Bible`, created private; flip to
-  public when ready).
+  (`https://github.com/josuantonsanz/TUI-Bible`).
 - [x] Ship a copy-paste download/install block in `README.md` and a Windows
   Desktop shortcut (`scripts/create_desktop_shortcut.ps1`).
